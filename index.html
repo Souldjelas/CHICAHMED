@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -34,15 +35,19 @@
       <h1 class="welcome-title">ChicAhmed</h1>
       <div class="welcome-divider"></div>
       <p class="welcome-text">
-        Bienvenue chez <strong>ChicAhmed</strong>.<br>
-        Merci de nous avoir choisis.<br><br>
-        Nous sommes heureux de vous accueillir dans notre boutique.<br>
-        Découvrez notre collection premium de vêtements et accessoires.
+        Bienvenue chez <strong>ChicAhmed</strong> (Agbalépédogan, Lomé).<br>
+        Découvrez notre collection de luxe et visitez l'intérieur de notre boutique en vidéo TikTok !
       </p>
-      <button id="welcome-btn" class="welcome-btn">
-        <span>Découvrir la boutique</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      <div style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%; margin-top: 1rem;">
+        <button id="welcome-btn" class="welcome-btn" style="width: 100%; justify-content: center;">
+          <span>Découvrir la boutique</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn" style="width: 100%; background: #000; color: #fff; border: 1px solid rgba(201,169,110,0.5); padding: 0.8rem 1.2rem; border-radius: 4px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: 0.95rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+          Visiter la boutique sur TikTok 🎬
+        </a>
+      </div>
     </div>
   </div>
 
@@ -77,17 +82,23 @@
 
       <!-- Actions -->
       <div class="header-actions">
-      <button class="theme-toggle-btn" aria-label="Changer le thème">
-        <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
+        <button class="theme-toggle-btn" aria-label="Changer le thème">
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <!-- TikTok Icon -->
+        <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="header-wa-icon" aria-label="TikTok ChicAhmed" title="Voir l'intérieur de la boutique sur TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;">
+            <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/>
+          </svg>
+        </a>
         <!-- WhatsApp Icon -->
-        <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="header-wa-icon" aria-label="WhatsApp">
+        <a href="https://wa.me/22890022197" target="_blank" rel="noopener" class="header-wa-icon" aria-label="WhatsApp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
         </a>
-        <!-- Commander sur la boutique -->
+        <!-- Commander sur nos vêtements -->
         <a href="boutique.html" class="btn-wa">
           Commander nos vêtements
         </a>
@@ -97,6 +108,7 @@
     <!-- Mobile Nav Drawer -->
     <div class="mobile-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
+      <button class="mobile-nav-close" aria-label="Fermer le menu">&times;</button>
       <a href="#hero" class="mobile-nav-link">Accueil</a>
       <a href="homme.html" class="mobile-nav-link">Hommes</a>
       <a href="femme.html" class="mobile-nav-link">Femmes</a>
@@ -105,7 +117,11 @@
       <a href="ceintures.html" class="mobile-nav-link">Ceintures</a>
       <a href="apropos.html" class="mobile-nav-link">À propos</a>
       <a href="contact.html" class="mobile-nav-link">Contact</a>
-      <a href="boutique.html" class="btn-wa" style="margin-top:1.5rem;text-align:center">Commander nos vêtements</a>
+      <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn" style="margin-top:1rem;background:#000;color:#fff;border:1px solid rgba(255,255,255,0.3);text-align:center;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+        Voir la boutique sur TikTok 🎬
+      </a>
+      <a href="https://wa.me/22890022197" target="_blank" class="btn-wa" style="margin-top:0.8rem;text-align:center">Commander sur WhatsApp</a>
     </nav>
   </header>
 
@@ -119,13 +135,13 @@
       <p class="hero-tag reveal-hero">— Collection 2026</p>
       <h1 class="hero-title reveal-hero">L'élégance qui<br>vous distingue.</h1>
       <p class="hero-sub reveal-hero">Découvrez des vêtements premium conçus pour révéler votre style.</p>
-      <div class="hero-actions reveal-hero">
-        <a href="boutique.html" class="btn btn-light">Découvrir le Prêt-à-Porter</a>
-        <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn btn-outline-light">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
-          Prêt-à-Porter TikTok
+      <div class="hero-actions reveal-hero" style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center;">
+        <a href="#categories" class="btn btn-light">Découvrir</a>
+        <a href="#products" class="btn btn-gold">Commander maintenant</a>
+        <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn" style="background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.35); color: #fff; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+          Visite TikTok 🎬
         </a>
-        <a href="boutique.html" class="btn btn-outline-light">Commander nos vêtements</a>
       </div>
     </div>
     <!-- Scroll indicator -->
@@ -223,8 +239,8 @@
 
         <!-- Ceintures -->
         <a href="ceintures.html" class="cat-card reveal" data-delay="320">
-          <div class="cat-img-wrap">
-            <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=800&auto=format&fit=crop" alt="Ceintures" loading="lazy">
+          <div class="cat-img-wrap" style="background: linear-gradient(135deg, #2a2217 0%, #15110b 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:1.5rem;">
+            <span style="color:var(--gold-300); font-size:1.5rem; letter-spacing:0.1em; font-family:var(--font-display);">✦ CEINTURES</span>
             <div class="cat-grad"></div>
           </div>
           <div class="cat-body">
@@ -233,32 +249,6 @@
           </div>
         </a>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION TIKTOK PRÊT-À-PORTER
-  ============================================================= -->
-  <section class="tiktok-section reveal">
-    <div class="container">
-      <div class="tiktok-card">
-        <div class="tiktok-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
-          <span>Présentation Vidéo Exclusive</span>
-        </div>
-        <h2 class="tiktok-title">Découvrez notre Collection Prêt-à-Porter sur TikTok</h2>
-        
-        <!-- Lien TikTok Principal -->
-        <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn-tiktok">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
-          <span>Regarder la vidéo Prêt-à-Porter sur TikTok (https://vm.tiktok.com/ZN8J6RQVL/)</span>
-        </a>
-        
-        <!-- Texte explicatif sous le lien -->
-        <p class="tiktok-description">
-          ✨ Plongez dans l'univers ChicAhmed : cette vidéo présente l'ensemble de notre nouvelle collection de prêt-à-porter haut de gamme. Découvrez la finesse de nos tissus, nos coupes ajustées pour hommes et femmes, et l'élégance de nos modèles uniques en vidéo.
-        </p>
       </div>
     </div>
   </section>
@@ -280,7 +270,7 @@
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=700&auto=format&fit=crop" alt="Manteau en laine cachemire" loading="lazy">
             <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
             </div>
             <span class="product-badge">Nouveau</span>
           </div>
@@ -291,7 +281,7 @@
             <p class="product-desc">Coupe structurée, finitions irréprochables. Laine vierge & cachemire premium.</p>
             <div class="product-footer">
               <span class="product-price">195 000 FCFA</span>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="btn-product-wa">
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="btn-product-wa">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Commander via WhatsApp
               </a>
@@ -304,7 +294,7 @@
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=700&auto=format&fit=crop" alt="Costume tailleur sur mesure" loading="lazy">
             <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
             </div>
             <span class="product-badge sale">−15%</span>
           </div>
@@ -318,7 +308,7 @@
                 <span class="product-price">285 000 FCFA</span>
                 <span class="product-old-price">335 000 FCFA</span>
               </div>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="btn-product-wa">
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="btn-product-wa">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Commander via WhatsApp
               </a>
@@ -331,7 +321,7 @@
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=700&auto=format&fit=crop" alt="Derby Oxford en cuir patiné" loading="lazy">
             <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
             </div>
           </div>
           <div class="product-info">
@@ -341,7 +331,7 @@
             <p class="product-desc">Cuir veau pleine fleur, semelle Goodyear. Élégance intemporelle.</p>
             <div class="product-footer">
               <span class="product-price">125 000 FCFA</span>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="btn-product-wa">
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="btn-product-wa">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Commander via WhatsApp
               </a>
@@ -354,7 +344,7 @@
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=700&auto=format&fit=crop" alt="Trench-coat signature" loading="lazy">
             <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
             </div>
             <span class="product-badge">Best Seller</span>
           </div>
@@ -365,7 +355,7 @@
             <p class="product-desc">Lyocell fluide, ceinture amovible. La sophistication au naturel.</p>
             <div class="product-footer">
               <span class="product-price">155 000 FCFA</span>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="btn-product-wa">
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="btn-product-wa">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Commander via WhatsApp
               </a>
@@ -373,35 +363,14 @@
           </div>
         </div>
 
-        <!-- Produit 5 -->
-        <div class="product-card reveal" data-delay="80">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=700&auto=format&fit=crop" alt="Ceinture cuir artisanale" loading="lazy">
-            <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20cuir%20artisanale." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <div class="product-cat">Ceintures</div>
-            <h3 class="product-name">Ceinture cuir artisanale</h3>
-            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
-            <p class="product-desc">Cuir vachette pleine fleur, boucle laiton massif. Finition artisanale.</p>
-            <div class="product-footer">
-              <span class="product-price">45 000 FCFA</span>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20cuir%20artisanale." target="_blank" rel="noopener" class="btn-product-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Commander via WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
+
 
         <!-- Produit 6 -->
         <div class="product-card reveal" data-delay="160">
           <div class="product-img-wrap">
             <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=700&auto=format&fit=crop" alt="Robe de soirée en soie" loading="lazy">
             <div class="product-overlay">
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
             </div>
             <span class="product-badge">Exclusif</span>
           </div>
@@ -412,7 +381,7 @@
             <p class="product-desc">Soie de mûrier pure, tombé exceptionnel. Une pièce signature pour les grandes occasions.</p>
             <div class="product-footer">
               <span class="product-price">220 000 FCFA</span>
-              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="btn-product-wa">
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="btn-product-wa">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Commander via WhatsApp
               </a>
@@ -458,10 +427,10 @@
         </div>
         <div class="why-card reveal" data-delay="240">
           <div class="why-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Service Client 7j/7</h3>
-          <p>Une équipe à votre écoute pour vous conseiller et répondre à toutes vos questions.</p>
+          <h3>Service client</h3>
+          <p>Notre équipe est disponible 7j/7 sur WhatsApp pour répondre à toutes vos questions.</p>
         </div>
         <div class="why-card reveal" data-delay="320">
           <div class="why-icon">
@@ -475,43 +444,48 @@
   </section>
 
   <!-- ============================================================
-       BOUTIQUE PHYSIQUE / SHOWROOM
+       BOUTIQUE PHYSIQUE (AGBALÉPÉDOGAN)
   ============================================================= -->
-  <section id="boutique-physique" class="store-section reveal">
+  <section class="store-showcase-section" style="padding: 5rem 0; background: var(--bg-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="store-grid">
-        <div class="store-image-wrap">
-          <img src="magasin-chicahmed.jpg" alt="Boutique ChicAhmed Prêt-à-Porter" class="store-image" loading="lazy">
-          <div class="store-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Boutique Physique</span>
+      <div class="store-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+        <div class="store-img-wrap reveal" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.4); border: 1px solid rgba(201,169,110,0.3);">
+          <img src="boutique-agbalepedogan.jpg" alt="Entrée de la boutique ChicAhmed à Agbalépédogan Lomé" style="width: 100%; height: auto; max-height: 520px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+          <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); padding: 0.55rem 0.95rem; border-radius: 30px; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+            ▶ Découvrir l'intérieur sur TikTok
+          </a>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding: 1.5rem 1.2rem; color: #fff;">
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--gold-300); text-transform: uppercase; letter-spacing: 0.12em;">
+              📍 Agbalépédogan (à côté de la Pharmacie Lumière) — Lomé, Togo
+            </span>
           </div>
         </div>
-        <div class="store-content">
-          <span class="section-tag">Venez nous rendre visite</span>
-          <h2 class="section-title">Notre Boutique ChicAhmed</h2>
-          <p class="store-desc">
-            Découvrez l'univers du prêt-à-porter de luxe en personne dans notre boutique. Venez essayer nos costumes sur-mesure, nos tenues et nos accessoires en cuir dans un cadre chaleureux et raffiné.
+        <div class="store-content reveal" data-delay="150">
+          <span class="section-tag" style="color: var(--gold-300); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em;">✦ Notre Espace Luxe au Togo</span>
+          <h2 class="section-title" style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); margin: 0.8rem 0 1.2rem; font-weight: 400; line-height: 1.2;">Bienvenue dans notre boutique à Agbalépédogan</h2>
+          <p style="color: var(--text-300); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            Venez découvrir notre boutique physique située à <strong>Agbalépédogan, à côté de la Pharmacie Lumière (Lomé)</strong>. Essayez nos vêtements de luxe, ajustez vos costumes sur mesure et profitez de l'accueil attentionné de notre équipe.
           </p>
-          <div class="store-details">
-            <div class="store-detail-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div>
-                <strong>Localisation :</strong>
-                <span>Boutique ChicAhmed Prêt-à-Porter (Togo)</span>
-              </div>
-            </div>
-            <div class="store-detail-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <div>
-                <strong>Horaires d'ouverture :</strong>
-                <span>Lundi - Samedi : 08h30 - 20h00</span>
-              </div>
-            </div>
-          </div>
-          <div class="store-actions">
-            <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20visiter%20votre%20boutique." target="_blank" rel="noopener" class="btn btn-gold">
-              Prendre rendez-vous / Contact WhatsApp
+          <ul style="list-style: none; padding: 0; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-200);">
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <span style="color: var(--gold-300); font-weight: bold;">✓</span> Essayage personnalisé & conseil style
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <span style="color: var(--gold-300); font-weight: bold;">✓</span> Retrait rapide de vos commandes
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <span style="color: var(--gold-300); font-weight: bold;">✓</span> Située à Agbalépédogan (à côté de la Pharmacie Lumière), Lomé
+            </li>
+          </ul>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20visiter%20votre%20boutique%20%C3%A0%20Agbal%C3%A9p%C3%A9dogan." target="_blank" rel="noopener" class="btn btn-gold" style="display: inline-flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+              Nous contacter sur WhatsApp
+            </a>
+            <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="btn" style="display: inline-flex; align-items: center; gap: 0.6rem; background: #0d0d0d; color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; padding: 0.75rem 1.4rem; font-weight: 600; text-decoration: none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+              Voir l'intérieur sur TikTok
             </a>
           </div>
         </div>
@@ -533,11 +507,11 @@
 
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">« Coupe impeccable et finitions d'une finesse rare. Le costume trois pièces que j'ai commandé pour mon mariage à Lomé a fait sensation. Service client très réactif sur WhatsApp. »</p>
+            <p class="testimonial-quote">« Qualité exceptionnelle. Le costume que j'ai commandé pour mon mariage à Lomé est magnifique, la coupe est parfaite. »</p>
             <div class="testimonial-author">
               <div class="testimonial-avatar">K</div>
               <div>
-                <strong>Koffi A.</strong>
+                <strong>Koffi M.</strong>
                 <span>Lomé, Togo</span>
               </div>
             </div>
@@ -545,23 +519,23 @@
 
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">« Les escarpins et la robe en soie dépassent toutes mes attentes. Le cuir est d'une excellente qualité et le tombé de la robe est parfait. Une vraie référence de luxe à Lomé. »</p>
+            <p class="testimonial-quote">« Les chaussures Oxford sont d'une beauté rare. Un vrai savoir-faire artisanal que je porte fièrement à Kpalimé ! »</p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">A</div>
+              <div class="testimonial-avatar">S</div>
               <div>
-                <strong>Amivi D.</strong>
-                <span>Lomé, Togo</span>
+                <strong>Sara A.</strong>
+                <span>Kpalimé, Togo</span>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">« J'ai commandé des derbies en cuir patiné et une ceinture assortie. Le cuir est très confortable dès le premier jour, et le savoir-faire se ressent immédiatement. Je recommande ChicAhmed ! »</p>
+            <p class="testimonial-quote">« Service impeccable. J'ai commandé via WhatsApp à Kara, le manteau est arrivé parfaitement emballé et la taille est nickel. »</p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">F</div>
+              <div class="testimonial-avatar">Y</div>
               <div>
-                <strong>Folly K.</strong>
+                <strong>Yao K.</strong>
                 <span>Kara, Togo</span>
               </div>
             </div>
@@ -569,12 +543,12 @@
 
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">« Le service de livraison et la commande via WhatsApp sont extrêmement pratiques. Le manteau en laine cachemire est chaud et élégant. Un professionnalisme irréprochable. »</p>
+            <p class="testimonial-quote">« La robe de soirée dépasse toutes mes attentes. Une pièce signature pour mes sorties à Atakpamé. Très chic ! »</p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">E</div>
+              <div class="testimonial-avatar">N</div>
               <div>
-                <strong>Essi S.</strong>
-                <span>Kpalimé, Togo</span>
+                <strong>Nadia D.</strong>
+                <span>Atakpamé, Togo</span>
               </div>
             </div>
           </div>
@@ -596,35 +570,64 @@
   <section class="gallery-section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Inspirations</span>
-        <h2 class="section-title">Notre Galerie</h2>
-        <p class="section-sub">Laissez-vous inspirer par notre univers de style.</p>
+        <span class="section-tag">Intérieur de la boutique</span>
+        <h2 class="section-title">Notre Univers</h2>
+        <p class="section-sub">Découvrez l'élégance et le raffinement de notre boutique à Agbalépédogan.</p>
       </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" data-caption="Collection automne">
-          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" alt="Collection mode" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+        <div class="gallery-item" data-src="boutique-costumes.jpg" data-caption="Notre collection de costumes & vestes">
+          <img src="boutique-costumes.jpg" alt="Collection de costumes et vestes ChicAhmed" loading="lazy">
+          <div class="gallery-overlay">
+            <span>+</span>
+            <p class="gallery-label">Costumes & Vestes</p>
+          </div>
         </div>
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" data-caption="Costumes sur mesure">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Costume luxe" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+        <div class="gallery-item" data-src="boutique-ceintures.jpg" data-caption="Ceintures en cuir premium">
+          <img src="boutique-ceintures.jpg" alt="Ceintures cuir premium ChicAhmed" loading="lazy">
+          <div class="gallery-overlay">
+            <span>+</span>
+            <p class="gallery-label">Ceintures Premium</p>
+          </div>
         </div>
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop" data-caption="Mode féminine">
-          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=600&auto=format&fit=crop" alt="Mode femme" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+        <div class="gallery-item" data-src="boutique-chemises.jpg" data-caption="Collection de chemises toutes tailles">
+          <img src="boutique-chemises.jpg" alt="Chemises toutes tailles ChicAhmed" loading="lazy">
+          <div class="gallery-overlay">
+            <span>+</span>
+            <p class="gallery-label">Chemises & Hauts</p>
+          </div>
         </div>
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" data-caption="Chaussures premium">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" alt="Chaussures cuir" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+        <div class="gallery-item" data-src="boutique-chaussures.jpg" data-caption="Chaussures en cuir & mocassins de luxe">
+          <img src="boutique-chaussures.jpg" alt="Chaussures cuir luxe ChicAhmed" loading="lazy">
+          <div class="gallery-overlay">
+            <span>+</span>
+            <p class="gallery-label">Chaussures de Luxe</p>
+          </div>
         </div>
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" data-caption="Élégance féminine">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mode femme luxe" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+        <div class="gallery-item" data-src="boutique-ensemble.jpg" data-caption="Assortiment costumes & chaussures">
+          <img src="boutique-ensemble.jpg" alt="Ensemble costumes et chaussures ChicAhmed" loading="lazy">
+          <div class="gallery-overlay">
+            <span>+</span>
+            <p class="gallery-label">Collections Complètes</p>
+          </div>
         </div>
-        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=1200&auto=format&fit=crop" data-caption="Accessoires cuir">
-          <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=600&auto=format&fit=crop" alt="Ceintures cuir" loading="lazy">
-          <div class="gallery-overlay"><span>+</span></div>
+      </div>
+
+      <!-- Texte professionnel sous la galerie -->
+      <div class="gallery-tagline reveal">
+        <div class="gallery-tagline-inner">
+          <span class="gallery-quote-icon">✦</span>
+          <p class="gallery-tagline-text">
+            Chez <strong>ChicAhmed</strong>, chaque vêtement est une promesse d'élégance. Nous sélectionnons avec soin des pièces d'exception pour homme qui allient style contemporain, qualité supérieure et raffinement — pour que chaque occasion devienne un moment d'exception.
+          </p>
+          <span class="gallery-quote-icon">✦</span>
         </div>
+        <p class="gallery-tagline-sub">
+          🏪 Boutique physique à <strong>Agbalépédogan</strong>, à côté de la Pharmacie Lumière — Lomé, Togo<br>
+          Venez découvrir notre espace et vous faire conseiller par notre équipe.
+        </p>
+        <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20visiter%20la%20boutique" class="btn-visite" target="_blank" rel="noopener">
+          📲 Prendre rendez-vous sur WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -680,8 +683,8 @@
             </div>
             <div>
               <h4>Téléphone / WhatsApp</h4>
-              <p>+212 710 49 28 46</p>
-              <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="btn-wa-inline">
+              <p>+228 90 02 21 97</p>
+              <a href="https://wa.me/22890022197" target="_blank" rel="noopener" class="btn-wa-inline">
                 Ouvrir WhatsApp
               </a>
             </div>
@@ -693,16 +696,16 @@
             </div>
             <div>
               <h4>Notre boutique</h4>
-              <p>Casablanca, Maroc<br>Ouvert Lun–Sam : 10h–19h30</p>
+              <p>Agbalépédogan (à côté de la Pharmacie Lumière), Lomé, Togo<br>Ouvert Lun–Sam : 10h–19h30</p>
             </div>
           </div>
 
           <!-- Carte Google Maps -->
           <div class="contact-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212929.28929048!2d-7.7261095!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31855.87!2d1.2146!3d6.1375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e136d3bce233%3A0xd3bfb7e35e4a1f7b!2sLom%C3%A9%2C%20Togo!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              title="Localisation ChicAhmed Casablanca"></iframe>
+              title="Localisation ChicAhmed Agbalépédogan Lomé Togo"></iframe>
           </div>
         </div>
 
@@ -745,17 +748,14 @@
 
           <!-- Brand -->
           <div class="footer-brand">
-            <a href="#hero" class="footer-logo">
-        <img src="logo-dark.png" alt="ChicAhmed" class="logo-img logo-img-dark">
-        <img src="logo-light.png" alt="ChicAhmed" class="logo-img logo-img-light">
-      </a>
+            <a href="#hero" class="footer-logo">Chic<span>Ahmed</span></a>
             <p>La mode premium accessible. Vêtements et accessoires haut de gamme pour révéler votre élégance naturelle.</p>
             <div class="footer-socials">
-              <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" aria-label="TikTok Prêt-à-Porter" class="social-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
-              </a>
-              <a href="https://wa.me/212710492846" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
+              <a href="https://wa.me/22890022197" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </a>
+              <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" aria-label="TikTok ChicAhmed" class="social-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -795,7 +795,7 @@
           <div class="footer-col">
             <h4>Commandez maintenant</h4>
             <p style="margin-bottom:1.25rem;font-size:.88rem;">Passez votre commande directement via WhatsApp. Réponse immédiate 7j/7.</p>
-            <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander." target="_blank" rel="noopener" class="btn-wa" style="display:inline-flex">Commander sur WhatsApp</a>
+            <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander." target="_blank" rel="noopener" class="btn-wa" style="display:inline-flex">Commander sur WhatsApp</a>
           </div>
 
         </div>
@@ -815,7 +815,7 @@
   </button>
 
   <!-- WhatsApp Flottant -->
-  <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp ChicAhmed">
+  <a href="https://wa.me/22890022197" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp ChicAhmed">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
   </a>
 

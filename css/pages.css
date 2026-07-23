@@ -702,3 +702,24 @@
 .team-card:hover .team-card-img img { transform: scale(1.04); }
 .team-card h4 { font-size: 1rem; color: var(--text-100); margin-bottom: 0.25rem; }
 .team-card span { font-size: 0.75rem; color: var(--gold-300); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── RESPONSIVE PAGES ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cart-page-grid { grid-template-columns: 1fr; }
+  .cart-table-header { display: none; }
+  .cart-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-2);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .about-team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+
+@media (max-width: 580px) {
+  .about-team-grid { grid-template-columns: 1fr; }
+  .page-header { padding: calc(var(--nav-h) + 1.5rem) 1rem 2rem; }
+  .page-header-title { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+}

@@ -264,8 +264,7 @@ const PRODUCTS = [
     rating: 4.9,
     reviews: 19,
     images: [
-      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop'
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop'
     ],
     colors: [
       { name: 'Camel', hex: '#A0522D' },

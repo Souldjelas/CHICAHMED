@@ -86,10 +86,10 @@ function closeWelcomeModal() {
    03. HEADER — SCROLL & HAMBURGER
    ========================================================================== */
 (function initHeader() {
-  const header    = document.getElementById('header');
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  const overlay   = document.getElementById('mobile-overlay');
+  const header    = document.getElementById('header') || document.querySelector('.header');
+  const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger') || document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav') || document.querySelector('.mobile-nav');
+  const overlay   = document.getElementById('mobile-overlay') || document.querySelector('.mobile-overlay');
   if (!header) return;
 
   /* ── Scroll ── */
@@ -123,6 +123,10 @@ function closeWelcomeModal() {
   });
 
   overlay?.addEventListener('click', closeMobileNav);
+
+  // Bouton de fermeture dans le menu mobile
+  const closeBtn = mobileNav?.querySelector('.mobile-nav-close');
+  closeBtn?.addEventListener('click', closeMobileNav);
 
   // Fermer sur clic d'un lien mobile
   mobileNav?.querySelectorAll('a').forEach(link => {
@@ -633,6 +637,8 @@ function closeWelcomeModal() {
   const bindToggles = () => {
     const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
     toggleBtns.forEach(btn => {
+      if (btn.dataset.themeBound) return;
+      btn.dataset.themeBound = 'true';
       btn.addEventListener('click', () => {
         const isLight = document.body.classList.toggle('light-theme');
         localStorage.setItem('chicahmed-theme', isLight ? 'light' : 'dark');

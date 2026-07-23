@@ -40,9 +40,9 @@ function initNavbar() {
 
 /* ── MOBILE MENU ─────────────────────────────────────────────── */
 function initMobileMenu() {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.mobile-nav');
-  const overlay = document.querySelector('.mobile-overlay');
+  const toggle = document.querySelector('.menu-toggle') || document.querySelector('.hamburger') || document.getElementById('hamburger');
+  const nav = document.querySelector('.mobile-nav') || document.getElementById('mobile-nav');
+  const overlay = document.querySelector('.mobile-overlay') || document.getElementById('mobile-overlay');
   if (!toggle || !nav) return;
 
   const close = () => {
@@ -64,6 +64,13 @@ function initMobileMenu() {
   });
 
   overlay?.addEventListener('click', close);
+
+  const closeBtn = nav.querySelector('.mobile-nav-close');
+  closeBtn?.addEventListener('click', close);
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', close);
+  });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') close();
@@ -357,7 +364,7 @@ function initNewsletter() {
 
 /* ── WHATSAPP FLOTTANT ──────────────────────────────────────── */
 function initWhatsAppFloat() {
-  const phone = '22890000000'; // Numéro WhatsApp
+  const phone = '22890022197'; // Numéro WhatsApp
   const text = 'Bonjour, je souhaiterais des informations sur vos collections.';
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
@@ -381,7 +388,7 @@ window.contactWhatsApp = function(id, size = '', color = '') {
   const p = db.find(x => x.id === id);
   if (!p) return;
 
-  const phone = '22890000000';
+  const phone = '22890022197';
   let text = `Bonjour, je souhaite commander *${p.name}* (${formatPrice(p.price)}).`;
   if (size) text += ` Taille: *${size}*.`;
   if (color) text += ` Couleur: *${color}*.`;
@@ -403,6 +410,8 @@ window.contactWhatsApp = function(id, size = '', color = '') {
   const bindToggles = () => {
     const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
     toggleBtns.forEach(btn => {
+      if (btn.dataset.themeBound) return;
+      btn.dataset.themeBound = 'true';
       btn.addEventListener('click', () => {
         const isLight = document.body.classList.toggle('light-theme');
         localStorage.setItem('chicahmed-theme', isLight ? 'light' : 'dark');

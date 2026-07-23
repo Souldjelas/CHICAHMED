@@ -482,6 +482,48 @@ p { font-weight: 300; line-height: 1.75; }
   flex-shrink: 0;
 }
 
+/* ── LOGO OFFICIEL CHICAHMED ── */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.03);
+}
+
+.logo-img-dark {
+  display: none !important;
+}
+.logo-img-light {
+  display: block !important;
+}
+
+body.light-theme .logo-img-dark {
+  display: block !important;
+}
+body.light-theme .logo-img-light {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 38px;
+    max-width: 140px;
+  }
+}
+
 .header-wa-icon {
   color: var(--wa-green);
   display: flex;
@@ -1234,7 +1276,95 @@ p { font-weight: 300; line-height: 1.75; }
 }
 .gallery-item:hover .gallery-overlay span { transform: scale(1); }
 
-/* Lightbox */
+/* Gallery label under icon */
+.gallery-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 0; right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s, transform .35s;
+}
+.gallery-item:hover .gallery-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Professional tagline under gallery */
+.gallery-tagline {
+  margin-top: 3.5rem;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.gallery-tagline-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto 1.8rem;
+}
+
+.gallery-quote-icon {
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-top: .25rem;
+  flex-shrink: 0;
+  opacity: .8;
+}
+
+.gallery-tagline-text {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.gallery-tagline-text strong {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.gallery-tagline-sub {
+  font-size: .95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.gallery-tagline-sub strong {
+  color: var(--text-primary);
+}
+
+.btn-visite {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .85rem 2rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  letter-spacing: .03em;
+  transition: transform .25s var(--ease), box-shadow .25s;
+  box-shadow: 0 4px 20px rgba(37,211,102,.3);
+}
+.btn-visite:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37,211,102,.45);
+}
+
+
 .lightbox {
   position: fixed; inset: 0;
   background: rgba(0,0,0,.95);
@@ -1672,27 +1802,38 @@ p { font-weight: 300; line-height: 1.75; }
 
 /* Mobile (≤580px) */
 @media (max-width: 580px) {
-  .hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
-  .hero-actions { flex-direction: column; gap: .75rem; }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  .hero-title { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .hero-actions { flex-direction: column; gap: .75rem; width: 100%; }
   .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .categories-grid { grid-template-columns: 1fr 1fr; gap: .65rem; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); gap: .65rem; }
 
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .product-title { font-size: 0.9rem; }
+  .product-price { font-size: 0.9rem; }
 
   .why-grid { grid-template-columns: 1fr; }
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
 
-  .welcome-box { padding: 2rem 1.5rem; }
-  .welcome-title { font-size: 2rem; }
+  .welcome-box { padding: 2rem 1.25rem; width: 92vw; }
+  .welcome-title { font-size: 1.8rem; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-top { padding: 3rem 0 2rem; }
 
-  .newsletter-box { padding: 2.5rem 1.5rem; }
+  .newsletter-box { padding: 2rem 1.25rem; }
   .newsletter-field { flex-direction: column; }
   .newsletter-field input, .newsletter-field button { width: 100%; border-radius: var(--r-sm); }
 
@@ -1701,7 +1842,7 @@ p { font-weight: 300; line-height: 1.75; }
 
 /* Très petit mobile (≤380px) */
 @media (max-width: 380px) {
-  .categories-grid { grid-template-columns: 1fr; }
+  .categories-grid, .products-grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================

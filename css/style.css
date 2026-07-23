@@ -1439,13 +1439,23 @@ body.light-theme .logo-img-light {
 }
 
 .logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
+  max-width: 190px;
   object-fit: contain;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .logo:hover .logo-img {
+  transform: scale(1.03);
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 38px;
+    max-width: 140px;
+  }
 }
 
 /* Footer & Auth logo adjustments */

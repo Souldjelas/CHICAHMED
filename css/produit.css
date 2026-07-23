@@ -454,3 +454,31 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
+
+/* ── RESPONSIVE PRODUIT ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .product-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-add-cart, .btn-whatsapp-order {
+    width: 100%;
+    justify-content: center;
+  }
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
