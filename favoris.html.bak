@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mes favoris ChicAhmed — Retrouvez toutes vos pièces coups de cœur sauvegardées.">
+  <title>Mes Favoris | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html?gender=homme" class="nav-link">Homme</a>
+        <a href="boutique.html?gender=femme" class="nav-link">Femme</a>
+        <a href="boutique.html" class="nav-link">Collections</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-search-open aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="favoris.html" class="nav-icon-btn active" style="position:relative" aria-label="Favoris">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" style="fill:var(--gold-300)"/></svg>
+          <span class="badge-count wishlist-badge">0</span>
+        </a>
+        <button class="nav-icon-btn" onclick="openCartSidebar()" style="position:relative" aria-label="Panier">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html" class="mobile-nav-link">Boutique</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <div id="search-modal" class="search-modal">
+    <div class="search-inner">
+      <div class="search-close"><button id="search-close-btn">&times;</button></div>
+      <div class="search-field">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-400);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Rechercher…" autocomplete="off">
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h3>Votre Panier</h3><button class="cart-close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total</span><span id="cart-subtotal-price">0 FCFA</span></div>
+      <a href="panier.html" class="btn btn-primary" onclick="closeCartSidebar()">Voir le panier</a>
+      <p class="cart-note">Livraison offerte dès 50 000 FCFA</p>
+    </div>
+  </aside>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="page-header-tag">Mes coups de cœur</span>
+    <h1 class="page-header-title">Mes Favoris</h1>
+  </div>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem">
+        <span id="wishlist-count" style="font-size:.82rem;color:var(--text-400)"></span>
+        <button onclick="clearAllWishlist()" style="font-size:.75rem;color:var(--text-400);text-decoration:underline;text-underline-offset:3px;transition:color .2s" onmouseover="this.style.color='var(--error)'" onmouseout="this.style.color='var(--text-400)'">Tout supprimer</button>
+      </div>
+      <div id="wishlist-content"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p class="copyright">© 2026 CHIC AHMED. Tous droits réservés.</p>
+      <div class="payment-methods">VISA · MASTERCARD · MOBILE MONEY</div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', renderWishlistPage);
+
+  function renderWishlistPage() {
+    const content = document.getElementById('wishlist-content');
+    const countEl = document.getElementById('wishlist-count');
+    if (!content) return;
+
+    const wl = JSON.parse(localStorage.getItem('chicahmed_wishlist') || '[]');
+    const db = window.PRODUCTS || [];
+    const items = db.filter(p => wl.includes(p.id));
+
+    if (countEl) countEl.textContent = `${items.length} article${items.length > 1 ? 's' : ''} sauvegardé${items.length > 1 ? 's' : ''}`;
+
+    if (!items.length) {
+      content.innerHTML = `
+        <div class="wishlist-empty">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <h3>Aucun favori pour le moment</h3>
+          <p>Parcourez nos collections et sauvegardez vos pièces coups de cœur.</p>
+          <a href="boutique.html" class="btn btn-primary">Découvrir la boutique</a>
+        </div>`;
+      return;
+    }
+
+    content.innerHTML = `<div class="wishlist-grid">${items.map(p => renderProductCard(p)).join('')}</div>`;
+  }
+
+  window.clearAllWishlist = function() {
+    if (!confirm('Vider tous vos favoris ?')) return;
+    localStorage.removeItem('chicahmed_wishlist');
+    updateBadges();
+    renderWishlistPage();
+  };
+  </script>
+</body>
+</html>

@@ -388,3 +388,32 @@ window.contactWhatsApp = function(id, size = '', color = '') {
 
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
 };
+
+/* ── THEME SWITCHER ─────────────────────────────────────────── */
+(function initTheme() {
+  const savedTheme = localStorage.getItem('chicahmed-theme');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  
+  if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+    document.body.classList.add('light-theme');
+  } else {
+    document.body.classList.remove('light-theme');
+  }
+
+  const bindToggles = () => {
+    const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-theme');
+        localStorage.setItem('chicahmed-theme', isLight ? 'light' : 'dark');
+      });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindToggles);
+  } else {
+    bindToggles();
+  }
+})();
+

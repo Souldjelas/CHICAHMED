@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChicAhmed — Boutique mode luxe. Prêt-à-porter premium pour Homme & Femme. Costumes, chaussures en cuir, ceintures haut de gamme.">
+  <title>ChicAhmed | Prêt-à-Porter de Luxe</title>
+
+  <!-- Google Fonts: Cormorant Garamond + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       PRELOADER
+  ============================================================= -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">ChicAhmed</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL DE BIENVENUE
+  ============================================================= -->
+  <div id="welcome-modal" class="welcome-modal" role="dialog" aria-modal="true" aria-label="Bienvenue">
+    <div class="welcome-box">
+      <div class="welcome-ornament">✦</div>
+      <h1 class="welcome-title">ChicAhmed</h1>
+      <div class="welcome-divider"></div>
+      <p class="welcome-text">
+        Bienvenue chez <strong>ChicAhmed</strong>.<br>
+        Merci de nous avoir choisis.<br><br>
+        Nous sommes heureux de vous accueillir dans notre boutique.<br>
+        Découvrez notre collection premium de vêtements et accessoires.
+      </p>
+      <button id="welcome-btn" class="welcome-btn">
+        <span>Découvrir la boutique</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================= -->
+  <header class="header" id="header">
+    <div class="header-inner">
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="#hero" class="logo" aria-label="ChicAhmed accueil">
+        Chic<span>Ahmed</span>
+      </a>
+
+      <!-- Navigation Desktop -->
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#hero" class="nav-link">Accueil</a>
+        <a href="homme.html" class="nav-link">Hommes</a>
+        <a href="femme.html" class="nav-link">Femmes</a>
+        <a href="costumes.html" class="nav-link">Costumes</a>
+        <a href="chaussures.html" class="nav-link">Chaussures</a>
+        <a href="ceintures.html" class="nav-link">Ceintures</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="header-wa-icon" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+        <!-- Commander sur WhatsApp -->
+        <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20ce%20produit." target="_blank" rel="noopener" class="btn-wa">
+          Commander sur WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
+      <a href="#hero" class="mobile-nav-link">Accueil</a>
+      <a href="homme.html" class="mobile-nav-link">Hommes</a>
+      <a href="femme.html" class="mobile-nav-link">Femmes</a>
+      <a href="costumes.html" class="mobile-nav-link">Costumes</a>
+      <a href="chaussures.html" class="mobile-nav-link">Chaussures en cuir</a>
+      <a href="ceintures.html" class="mobile-nav-link">Ceintures</a>
+      <a href="apropos.html" class="mobile-nav-link">À propos</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="https://wa.me/212710492846" target="_blank" class="btn-wa" style="margin-top:1.5rem;text-align:center">Commander sur WhatsApp</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       HERO
+  ============================================================= -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1920&auto=format&fit=crop')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag reveal-hero">— Collection 2026</p>
+      <h1 class="hero-title reveal-hero">L'élégance qui<br>vous distingue.</h1>
+      <p class="hero-sub reveal-hero">Découvrez des vêtements premium conçus pour révéler votre style.</p>
+      <div class="hero-actions reveal-hero">
+        <a href="#categories" class="btn btn-light">Découvrir</a>
+        <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander." target="_blank" rel="noopener" class="btn btn-outline-light">Commander maintenant</a>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS / COUNTERS
+  ============================================================= -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="5000">0</span>+</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+        <div class="stat-item reveal" data-delay="100">
+          <div class="stat-number"><span class="counter" data-target="120">0</span>+</div>
+          <div class="stat-label">Produits premium</div>
+        </div>
+        <div class="stat-item reveal" data-delay="200">
+          <div class="stat-number"><span class="counter" data-target="8">0</span></div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div class="stat-item reveal" data-delay="300">
+          <div class="stat-number"><span class="counter" data-target="98">0</span>%</div>
+          <div class="stat-label">Avis positifs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATÉGORIES
+  ============================================================= -->
+  <section id="categories" class="categories-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Parcourir par univers</span>
+        <h2 class="section-title">Nos Catégories</h2>
+        <p class="section-sub">Chaque pièce sélectionnée avec exigence pour votre style de vie.</p>
+      </div>
+      <div class="categories-grid">
+
+        <!-- Hommes -->
+        <a href="homme.html" class="cat-card reveal" data-delay="0">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="Collection Hommes" loading="lazy">
+            <div class="cat-grad"></div>
+          </div>
+          <div class="cat-body">
+            <h3>Hommes</h3>
+            <span class="cat-btn">Voir la collection <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Femmes -->
+        <a href="femme.html" class="cat-card reveal" data-delay="80">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop" alt="Collection Femmes" loading="lazy">
+            <div class="cat-grad"></div>
+          </div>
+          <div class="cat-body">
+            <h3>Femmes</h3>
+            <span class="cat-btn">Voir la collection <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Costumes -->
+        <a href="costumes.html" class="cat-card reveal" data-delay="160">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Costumes" loading="lazy">
+            <div class="cat-grad"></div>
+          </div>
+          <div class="cat-body">
+            <h3>Costumes</h3>
+            <span class="cat-btn">Voir la collection <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Chaussures en cuir -->
+        <a href="chaussures.html" class="cat-card reveal" data-delay="240">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop" alt="Chaussures en cuir" loading="lazy">
+            <div class="cat-grad"></div>
+          </div>
+          <div class="cat-body">
+            <h3>Chaussures en cuir</h3>
+            <span class="cat-btn">Voir la collection <span>→</span></span>
+          </div>
+        </a>
+
+        <!-- Ceintures -->
+        <a href="ceintures.html" class="cat-card reveal" data-delay="320">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=800&auto=format&fit=crop" alt="Ceintures" loading="lazy">
+            <div class="cat-grad"></div>
+          </div>
+          <div class="cat-body">
+            <h3>Ceintures</h3>
+            <span class="cat-btn">Voir la collection <span>→</span></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUITS
+  ============================================================= -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Sélection exclusive</span>
+        <h2 class="section-title">Nos Produits</h2>
+        <p class="section-sub">Des pièces d'exception choisies avec soin pour sublimer votre élégance.</p>
+      </div>
+      <div class="products-grid">
+
+        <!-- Produit 1 -->
+        <div class="product-card reveal" data-delay="0">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=700&auto=format&fit=crop" alt="Manteau en laine cachemire" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge">Nouveau</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Vestes</div>
+            <h3 class="product-name">Manteau en laine cachemire</h3>
+            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <p class="product-desc">Coupe structurée, finitions irréprochables. Laine vierge & cachemire premium.</p>
+            <div class="product-footer">
+              <span class="product-price">195 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20en%20laine%20cachemire." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="product-card reveal" data-delay="80">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=700&auto=format&fit=crop" alt="Costume tailleur sur mesure" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge sale">−15%</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Costumes</div>
+            <h3 class="product-name">Costume tailleur sur mesure</h3>
+            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <p class="product-desc">Laine italienne, doublure soie, coupe architecturale. L'autorité au quotidien.</p>
+            <div class="product-footer">
+              <div>
+                <span class="product-price">285 000 FCFA</span>
+                <span class="product-old-price">335 000 FCFA</span>
+              </div>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Costume%20tailleur." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="product-card reveal" data-delay="160">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=700&auto=format&fit=crop" alt="Derby Oxford en cuir patiné" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Chaussures en cuir</div>
+            <h3 class="product-name">Derby Oxford en cuir patiné</h3>
+            <div class="product-stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+            <p class="product-desc">Cuir veau pleine fleur, semelle Goodyear. Élégance intemporelle.</p>
+            <div class="product-footer">
+              <span class="product-price">125 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20les%20Derby%20Oxford." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 4 -->
+        <div class="product-card reveal" data-delay="0">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=700&auto=format&fit=crop" alt="Trench-coat signature" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge">Best Seller</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Vestes femme</div>
+            <h3 class="product-name">Trench-coat signature</h3>
+            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <p class="product-desc">Lyocell fluide, ceinture amovible. La sophistication au naturel.</p>
+            <div class="product-footer">
+              <span class="product-price">155 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat%20signature." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 5 -->
+        <div class="product-card reveal" data-delay="80">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=700&auto=format&fit=crop" alt="Ceinture cuir artisanale" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20cuir%20artisanale." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Ceintures</div>
+            <h3 class="product-name">Ceinture cuir artisanale</h3>
+            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <p class="product-desc">Cuir vachette pleine fleur, boucle laiton massif. Finition artisanale.</p>
+            <div class="product-footer">
+              <span class="product-price">45 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20cuir%20artisanale." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 6 -->
+        <div class="product-card reveal" data-delay="160">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=700&auto=format&fit=crop" alt="Robe de soirée en soie" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge">Exclusif</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Femmes</div>
+            <h3 class="product-name">Robe de soirée en soie</h3>
+            <div class="product-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <p class="product-desc">Soie de mûrier pure, tombé exceptionnel. Une pièce signature pour les grandes occasions.</p>
+            <div class="product-footer">
+              <span class="product-price">220 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20de%20soirée." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Commander via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       POURQUOI CHOISIR CHICAHMED ?
+  ============================================================= -->
+  <section id="about" class="why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Notre promesse</span>
+        <h2 class="section-title">Pourquoi choisir ChicAhmed ?</h2>
+        <p class="section-sub">Chaque détail compte. Votre satisfaction est notre priorité absolue.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal" data-delay="0">
+          <div class="why-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Qualité Premium</h3>
+          <p>Matières sélectionnées avec exigence, certifiées et traçables. Chaque pièce est un chef-d'œuvre.</p>
+        </div>
+        <div class="why-card reveal" data-delay="80">
+          <div class="why-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Livraison rapide</h3>
+          <p>Expédition soignée sous 24h. Suivi en temps réel, livraison sécurisée partout au Maroc.</p>
+        </div>
+        <div class="why-card reveal" data-delay="160">
+          <div class="why-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Paiement sécurisé</h3>
+          <p>Transactions 100% sécurisées. Paiement à la livraison ou par mobile banking disponible.</p>
+        </div>
+        <div class="why-card reveal" data-delay="240">
+          <div class="why-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Service client</h3>
+          <p>Notre équipe est disponible 7j/7 sur WhatsApp pour répondre à toutes vos questions.</p>
+        </div>
+        <div class="why-card reveal" data-delay="320">
+          <div class="why-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Produits authentiques</h3>
+          <p>100% originaux et certifiés. Nous garantissons l'authenticité de chaque article.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TÉMOIGNAGES
+  ============================================================= -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Avis clients</span>
+        <h2 class="section-title">Ce que disent nos clients</h2>
+      </div>
+      <div class="testimonials-wrapper reveal">
+        <div class="testimonials-track" id="testimonials-track">
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">« Qualité exceptionnelle. Le costume que j'ai commandé est magnifique, la coupe est parfaite et la livraison était ultra-rapide. Je reviendrai ! »</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">K</div>
+              <div>
+                <strong>Karim B.</strong>
+                <span>Casablanca, Maroc</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">« Les chaussures Oxford sont d'une beauté rare. Le cuir est souple dès le premier jour, un vrai savoir-faire artisanal. Bravo ChicAhmed ! »</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">S</div>
+              <div>
+                <strong>Sara M.</strong>
+                <span>Rabat, Maroc</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">« Service impeccable. J'ai commandé via WhatsApp, on m'a guidé pour le choix de la taille, et le manteau est arrivé parfaitement emballé. Merci ! »</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">Y</div>
+              <div>
+                <strong>Youssef A.</strong>
+                <span>Marrakech, Maroc</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">« La robe de soirée dépasse toutes mes attentes. La soie est d'une douceur incroyable et le tombé est parfait. Un vrai luxe accessible. »</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">N</div>
+              <div>
+                <strong>Nadia R.</strong>
+                <span>Tanger, Maroc</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Contrôles -->
+        <div class="testimonials-controls">
+          <button class="t-arrow t-prev" id="t-prev" aria-label="Précédent">←</button>
+          <div class="testimonials-dots" id="t-dots"></div>
+          <button class="t-arrow t-next" id="t-next" aria-label="Suivant">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALERIE
+  ============================================================= -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Inspirations</span>
+        <h2 class="section-title">Notre Galerie</h2>
+        <p class="section-sub">Laissez-vous inspirer par notre univers de style.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" data-caption="Collection automne">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" alt="Collection mode" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" data-caption="Costumes sur mesure">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Costume luxe" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop" data-caption="Mode féminine">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=600&auto=format&fit=crop" alt="Mode femme" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" data-caption="Chaussures premium">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" alt="Chaussures cuir" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" data-caption="Élégance féminine">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mode femme luxe" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=1200&auto=format&fit=crop" data-caption="Accessoires cuir">
+          <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=600&auto=format&fit=crop" alt="Ceintures cuir" loading="lazy">
+          <div class="gallery-overlay"><span>+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">×</button>
+    <button class="lightbox-arrow lightbox-prev" id="lb-prev" aria-label="Précédent">‹</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-arrow lightbox-next" id="lb-next" aria-label="Suivant">›</button>
+  </div>
+
+  <!-- ============================================================
+       NEWSLETTER
+  ============================================================= -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <span class="section-tag" style="color:var(--gold)">Newsletter exclusive</span>
+        <h2>Recevez nos nouveautés.</h2>
+        <p>Soyez le premier informé de nos nouvelles collections, promotions et offres exclusives.</p>
+        <form id="newsletter-form" class="newsletter-form" novalidate>
+          <div class="newsletter-field">
+            <input type="email" id="newsletter-email" placeholder="Votre adresse email" required autocomplete="email">
+            <button type="submit">Je m'inscris</button>
+          </div>
+          <p class="form-message" id="newsletter-msg"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Nous joindre</span>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Notre équipe est disponible pour vous accompagner dans vos choix.</p>
+      </div>
+      <div class="contact-grid">
+
+        <!-- Infos -->
+        <div class="contact-info reveal">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+            <div>
+              <h4>Téléphone / WhatsApp</h4>
+              <p>+212 710 49 28 46</p>
+              <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="btn-wa-inline">
+                Ouvrir WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 13 8 13s8-7.75 8-13a8 8 0 0 0-8-8z"/></svg>
+            </div>
+            <div>
+              <h4>Notre boutique</h4>
+              <p>Casablanca, Maroc<br>Ouvert Lun–Sam : 10h–19h30</p>
+            </div>
+          </div>
+
+          <!-- Carte Google Maps -->
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212929.28929048!2d-7.7261095!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Localisation ChicAhmed Casablanca"></iframe>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact-form-wrap reveal" data-delay="100">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="c-name">Nom complet *</label>
+              <input type="text" id="c-name" name="name" placeholder="Votre nom" required autocomplete="name">
+              <span class="field-error" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email *</label>
+              <input type="email" id="c-email" name="email" placeholder="votre@email.com" required autocomplete="email">
+              <span class="field-error" id="err-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Message *</label>
+              <textarea id="c-message" name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+              <span class="field-error" id="err-message"></span>
+            </div>
+            <button type="submit" class="btn btn-gold btn-full" id="contact-submit">
+              <span>Envoyer le message</span>
+            </button>
+            <p class="form-message" id="contact-msg"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#hero" class="footer-logo">Chic<span>Ahmed</span></a>
+            <p>La mode premium accessible. Vêtements et accessoires haut de gamme pour révéler votre élégance naturelle.</p>
+            <div class="footer-socials">
+              <a href="https://wa.me/212710492846" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Liens rapides -->
+          <div class="footer-col">
+            <h4>Liens rapides</h4>
+            <ul>
+              <li><a href="#hero">Accueil</a></li>
+              <li><a href="#categories">Hommes</a></li>
+              <li><a href="#categories">Femmes</a></li>
+              <li><a href="#categories">Costumes</a></li>
+              <li><a href="#categories">Chaussures</a></li>
+              <li><a href="#categories">Ceintures</a></li>
+            </ul>
+          </div>
+
+          <!-- Infos -->
+          <div class="footer-col">
+            <h4>Informations</h4>
+            <ul>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="contact.html">Livraison & Retours</a></li>
+              <li><a href="apropos.html">Mentions légales</a></li>
+              <li><a href="apropos.html">Politique de confidentialité</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col">
+            <h4>Commandez maintenant</h4>
+            <p style="margin-bottom:1.25rem;font-size:.88rem;">Passez votre commande directement via WhatsApp. Réponse immédiate 7j/7.</p>
+            <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander." target="_blank" rel="noopener" class="btn-wa" style="display:inline-flex">Commander sur WhatsApp</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 ChicAhmed. Tous droits réservés.</p>
+        <div class="footer-payment">VISA · MASTERCARD · MOBILE BANKING</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton Retour en haut -->
+  <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de page">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- WhatsApp Flottant -->
+  <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp ChicAhmed">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

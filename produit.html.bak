@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fiche produit ChicAhmed — Manteau en laine cachemire. Photos, tailles, couleurs, composition et commande via WhatsApp.">
+  <title>Manteau en laine cachemire | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/produit.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html?gender=homme" class="nav-link">Homme</a>
+        <a href="boutique.html?gender=femme" class="nav-link">Femme</a>
+        <a href="boutique.html?filter=new" class="nav-link">Nouveautés</a>
+        <a href="boutique.html" class="nav-link active">Collections</a>
+        <a href="boutique.html?filter=promo" class="nav-link">Promotions</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-search-open aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="connexion.html" class="nav-icon-btn" aria-label="Mon compte">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="favoris.html" class="nav-icon-btn" style="position:relative" aria-label="Favoris">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge-count wishlist-badge">0</span>
+        </a>
+        <button class="nav-icon-btn" onclick="openCartSidebar()" style="position:relative" aria-label="Panier">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html?gender=homme" class="mobile-nav-link">Homme</a>
+      <a href="boutique.html?gender=femme" class="mobile-nav-link">Femme</a>
+      <a href="boutique.html?filter=new" class="mobile-nav-link">Nouveautés</a>
+      <a href="boutique.html" class="mobile-nav-link">Collections</a>
+      <a href="boutique.html?filter=promo" class="mobile-nav-link">Promotions</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"><a href="connexion.html" class="btn btn-outline">Se connecter</a></div>
+  </nav>
+
+  <div id="search-modal" class="search-modal">
+    <div class="search-inner">
+      <div class="search-close"><button id="search-close-btn">&times;</button></div>
+      <div class="search-field">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-400);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Rechercher…" autocomplete="off">
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Votre Panier</h3>
+      <button class="cart-close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total</span><span id="cart-subtotal-price">0 FCFA</span></div>
+      <a href="panier.html" class="btn btn-primary" onclick="closeCartSidebar()">Voir le panier</a>
+      <p class="cart-note">Livraison offerte dès 50 000 FCFA</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="product-detail-layout">
+    <div class="container">
+
+      <div class="product-detail-grid">
+
+        <!-- ── GALERIE ── -->
+        <div class="product-gallery">
+          <div class="product-main-img" id="main-img-wrap">
+            <img id="main-img" src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=900&auto=format&fit=crop" alt="Manteau en laine cachemire">
+            <span class="zoom-hint">Clic pour zoomer</span>
+          </div>
+          <div class="product-thumbs" id="product-thumbs">
+            <button class="product-thumb active" data-src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=900&auto=format&fit=crop">
+              <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=200&auto=format&fit=crop" alt="Vue 1">
+            </button>
+            <button class="product-thumb" data-src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=900&auto=format&fit=crop">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop" alt="Vue 2">
+            </button>
+            <button class="product-thumb" data-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="Vue 3">
+            </button>
+          </div>
+        </div>
+
+        <!-- ── INFOS ── -->
+        <div class="product-info-panel">
+          <!-- Breadcrumb -->
+          <nav class="product-breadcrumb" aria-label="Fil d'Ariane">
+            <a href="index.html">Accueil</a><span>/</span>
+            <a href="boutique.html">Boutique</a><span>/</span>
+            <a href="boutique.html?category=vestes">Vestes</a><span>/</span>
+            <span>Manteau cachemire</span>
+          </nav>
+
+          <div class="product-detail-cat">Vestes & Manteaux</div>
+
+          <h1 class="product-detail-name">Manteau croisé en laine cachemire</h1>
+
+          <!-- Rating -->
+          <div class="product-detail-rating">
+            <div class="detail-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            </div>
+            <span class="detail-rating-count">4.8/5</span>
+            <span class="detail-rating-sep">·</span>
+            <a href="#reviews" class="detail-reviews-link">34 avis</a>
+          </div>
+
+          <!-- Prix -->
+          <div class="product-detail-prices">
+            <span class="detail-price">195 000 FCFA</span>
+            <span class="detail-old-price">250 000 FCFA</span>
+            <span class="detail-badge-discount">−22%</span>
+          </div>
+
+          <p style="font-size:.9rem;color:var(--text-400);line-height:1.75;margin-bottom:2rem">
+            Confectionné dans un mélange premium de laine vierge et de cachemire, ce manteau croisé présente une coupe structurée moderne. Parfait pour une silhouette élégante tout au long de l'hiver.
+          </p>
+
+          <!-- Couleur -->
+          <div class="product-select-group">
+            <div class="product-select-label">
+              Couleur : <strong id="selected-color" style="color:var(--text-100);font-weight:600">Beige</strong>
+            </div>
+            <div class="colors-row">
+              <button class="color-btn active" style="background:#D2B48C" data-color="Beige" title="Beige" aria-label="Beige"></button>
+              <button class="color-btn" style="background:#111111" data-color="Noir" title="Noir" aria-label="Noir"></button>
+              <button class="color-btn" style="background:#808080" data-color="Gris" title="Gris" aria-label="Gris"></button>
+              <button class="color-btn" style="background:#1B263B" data-color="Bleu Marine" title="Bleu Marine" aria-label="Bleu Marine"></button>
+              <button class="color-btn" style="background:#581845" data-color="Bordeaux" title="Bordeaux" aria-label="Bordeaux"></button>
+              <button class="color-btn" style="background:#097969" data-color="Vert Émeraude" title="Vert Émeraude" aria-label="Vert Émeraude"></button>
+              <button class="color-btn" style="background:#C9A96E" data-color="Doré Chic" title="Doré Chic" aria-label="Doré Chic"></button>
+            </div>
+          </div>
+
+          <!-- Taille -->
+          <div class="product-select-group">
+            <div class="product-select-label">
+              Taille : <strong id="selected-size" style="color:var(--text-100);font-weight:600">—</strong>
+              <a href="javascript:void(0)" class="size-guide-link" onclick="alert('Guide des tailles CHIC AHMED:\n- S : Poitrine 88-92 cm / Taille 76-80 cm\n- M : Poitrine 96-100 cm / Taille 84-88 cm\n- L : Poitrine 104-108 cm / Taille 92-96 cm\n- XL : Poitrine 112-116 cm / Taille 100-104 cm')">Guide des tailles</a>
+            </div>
+            <div class="sizes-grid">
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+            </div>
+            <p id="size-error" style="font-size:.75rem;color:#f87171;margin-top:.5rem;display:none">Veuillez sélectionner une taille.</p>
+          </div>
+
+          <!-- Quantité -->
+          <div class="product-select-group">
+            <div class="product-select-label">Quantité</div>
+            <div class="qty-row">
+              <button id="qty-dec" aria-label="Diminuer">−</button>
+              <span id="qty-value">1</span>
+              <button id="qty-inc" aria-label="Augmenter">+</button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-detail-actions">
+            <button class="btn-add-cart" id="add-to-cart-btn">
+              Ajouter au panier
+            </button>
+            <button class="btn-wishlist-toggle" id="wishlist-btn" aria-label="Ajouter aux favoris">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+            <a href="https://wa.me/22890000000?text=Bonjour%2C%20je%20veux%20commander%20le%20Manteau%20en%20laine%20cachemire%20-%20195%20000%20FCFA" target="_blank" class="btn-whatsapp-order" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+
+          <!-- Méta livraison -->
+          <div class="product-meta-list">
+            <div class="product-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span>Livraison express · Offerte dès 50 000 FCFA</span>
+            </div>
+            <div class="product-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="16 3 21 3 21 8"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><polyline points="8 21 3 21 3 16"/></svg>
+              <span>Retour gratuit sous 30 jours</span>
+            </div>
+            <div class="product-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Paiement 100% sécurisé</span>
+            </div>
+          </div>
+
+          <!-- Accordéon -->
+          <div class="product-accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger open" data-accordion="desc">
+                Description
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content open" id="acc-desc">
+                <div class="accordion-body">
+                  <p>Confectionné dans un mélange premium de laine vierge et de cachemire, ce manteau croisé présente une coupe structurée moderne inspirée des grandes maisons de mode. Sa silhouette affinée et ses revers crantés en font une pièce intemporelle qui traversera les saisons.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" data-accordion="comp">
+                Composition & Entretien
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content" id="acc-comp">
+                <div class="accordion-body">
+                  <p><strong style="color:var(--text-200)">Matière :</strong> 70% Laine Vierge, 20% Cachemire, 10% Polyamide. Doublure: 100% Viscose.</p>
+                  <ul>
+                    <li>Lavage à la main à 30°C recommandé</li>
+                    <li>Ne pas essorer ni sécher en machine</li>
+                    <li>Repassage à basse température</li>
+                    <li>Nettoyage à sec possible</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" data-accordion="details">
+                Détails & Coupe
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content" id="acc-details">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Col tailleur à revers crantés</li>
+                    <li>Double boutonnage croisé</li>
+                    <li>Poches latérales à rabat</li>
+                    <li>Fente d'aisance au dos</li>
+                    <li>Coupe légèrement cintrée</li>
+                    <li>Longueur mi-cuisse</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUITS SIMILAIRES -->
+      <div class="related-section">
+        <div style="margin-bottom:2rem">
+          <span style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-300)">Vous aimerez aussi</span>
+          <h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:400;color:var(--text-50);margin-top:.5rem">Produits similaires</h2>
+        </div>
+        <div class="related-grid" id="related-grid">
+          <!-- Chargé par JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER MINIMAL -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p class="copyright">© 2026 CHIC AHMED. Tous droits réservés.</p>
+      <div class="payment-methods">VISA · MASTERCARD · MOBILE MONEY</div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+  // ── PAGE PRODUIT ───────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    initGallery();
+    initSizeSelector();
+    initColorSelector();
+    initQty();
+    initAccordion();
+    initAddToCart();
+    initWishlistBtn();
+    loadRelated();
+  });
+
+  /* Galerie miniatures */
+  function initGallery() {
+    const mainImg = document.getElementById('main-img');
+    const thumbs = document.querySelectorAll('.product-thumb');
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = thumb.dataset.src;
+          mainImg.style.opacity = '1';
+          mainImg.style.transition = 'opacity 0.3s';
+        }, 180);
+      });
+    });
+
+    // Zoom au clic
+    mainImg.addEventListener('click', () => {
+      if (mainImg.style.transform) {
+        mainImg.style.transform = '';
+        mainImg.style.cursor = 'zoom-in';
+      } else {
+        mainImg.style.transform = 'scale(1.6)';
+        mainImg.style.cursor = 'zoom-out';
+        mainImg.style.transition = 'transform 0.35s';
+      }
+    });
+  }
+
+  /* Sélecteur taille */
+  let selectedSize = '';
+  function initSizeSelector() {
+    const btns = document.querySelectorAll('.size-btn');
+    const display = document.getElementById('selected-size');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedSize = btn.dataset.size;
+        if (display) display.textContent = selectedSize;
+        document.getElementById('size-error').style.display = 'none';
+      });
+    });
+  }
+
+  /* Sélecteur couleur */
+  let selectedColor = 'Beige';
+  function initColorSelector() {
+    const btns = document.querySelectorAll('.color-btn');
+    const display = document.getElementById('selected-color');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedColor = btn.dataset.color;
+        if (display) display.textContent = selectedColor;
+      });
+    });
+  }
+
+  /* Quantité */
+  let qty = 1;
+  function initQty() {
+    const dec = document.getElementById('qty-dec');
+    const inc = document.getElementById('qty-inc');
+    const display = document.getElementById('qty-value');
+    dec?.addEventListener('click', () => { qty = Math.max(1, qty - 1); if (display) display.textContent = qty; });
+    inc?.addEventListener('click', () => { qty = Math.min(10, qty + 1); if (display) display.textContent = qty; });
+  }
+
+  /* Accordéon */
+  function initAccordion() {
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const id = trigger.dataset.accordion;
+        const content = document.getElementById('acc-' + id);
+        const isOpen = trigger.classList.contains('open');
+
+        trigger.classList.toggle('open', !isOpen);
+        content?.classList.toggle('open', !isOpen);
+      });
+    });
+  }
+
+  /* Ajouter au panier */
+  function initAddToCart() {
+    document.getElementById('add-to-cart-btn')?.addEventListener('click', () => {
+      if (!selectedSize) {
+        document.getElementById('size-error').style.display = 'block';
+        return;
+      }
+      for (let i = 0; i < qty; i++) {
+        addToCart('v1', selectedSize, selectedColor);
+      }
+    });
+  }
+
+  /* Wishlist */
+  function initWishlistBtn() {
+    const btn = document.getElementById('wishlist-btn');
+    if (!btn) return;
+
+    const wl = JSON.parse(localStorage.getItem('chicahmed_wishlist') || '[]');
+    if (wl.includes('v1')) btn.classList.add('active');
+
+    btn.addEventListener('click', () => toggleWishlist('v1', { stopPropagation: () => {} }));
+  }
+
+  /* Produits similaires */
+  function loadRelated() {
+    const grid = document.getElementById('related-grid');
+    if (!grid || !window.PRODUCTS) return;
+    const related = window.PRODUCTS.filter(p => p.category === 'vestes' && p.id !== 'v1').slice(0, 4);
+    if (!related.length) {
+      grid.innerHTML = window.PRODUCTS.slice(0, 4).map(p => renderProductCard(p)).join('');
+    } else {
+      grid.innerHTML = related.map(p => renderProductCard(p)).join('');
+    }
+    // Reveal
+    grid.querySelectorAll('.product-card').forEach((card, i) => {
+      card.classList.add('reveal');
+      setTimeout(() => card.classList.add('revealed'), i * 80 + 100);
+    });
+  }
+  </script>
+</body>
+</html>

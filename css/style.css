@@ -19,14 +19,14 @@
   --gold-400: #aa8a50;
   --gold-500: #8b6d34;
 
-  --cream: #f5f0e8;
-  --cream-dim: #d4cfc7;
+  --cream: #fcf9f2;
+  --cream-dim: #e0d9cc;
 
-  --text-100: #ffffff;
-  --text-200: #e0ddd8;
-  --text-300: #b0aca6;
-  --text-400: #706c66;
-  --text-500: #3a3835;
+  --text-100: #f5edd8; /* Warm champagne white */
+  --text-200: #e0d9cc; /* Warm cream-gold text */
+  --text-300: #b8af9f; /* Warm dim text */
+  --text-400: #7a7266;
+  --text-500: #423e38;
 
   --border-gold: rgba(201, 169, 110, 0.25);
   --border-subtle: rgba(255, 255, 255, 0.06);
@@ -1296,3 +1296,307 @@ p {
   background: rgba(201, 169, 110, 0.25);
   color: var(--gold-100);
 }
+
+/* ==========================================================================
+   THEME SWITCHING (LIGHT THEME OVERRIDES)
+   ========================================================================== */
+body.light-theme {
+  --bg-0: #eae1cc;       /* Warm champagne gold background */
+  --bg-1: #dfd7c0;
+  --bg-2: #d4cbb2;
+  --bg-3: #c9bfa5;
+  --bg-4: #beb498;
+  --bg-hover: #d2c8b0;
+  
+  --text-100: #080808;   /* Black text */
+  --text-200: #1a1a1a;
+  --text-300: #4a4845;
+  --text-400: #706c66;
+  --text-500: #b0aca6;
+  
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(0, 0, 0, 0.15);
+  
+  --cream: #080808;
+  --cream-dim: #3a3835;
+  --glass: rgba(234, 225, 204, 0.85);
+  --glass-border: rgba(160, 132, 79, 0.25);
+  
+  /* Gold adjustments for contrast */
+  --gold-100: #8b6d34;
+  --gold-200: #aa8a50;
+  --gold-400: #e8c882;
+}
+
+/* Header scrolled and button hover overrides for Light Theme */
+body.light-theme .header.scrolled {
+  background: rgba(234, 225, 204, 0.98) !important;
+  border-bottom-color: rgba(160, 132, 79, 0.4) !important;
+}
+body.light-theme .nav-icon-btn:hover {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Complete Text & Typography Visibility Overrides for Light Theme */
+body.light-theme {
+  color: #111111 !important;
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme .section-title,
+body.light-theme .product-name,
+body.light-theme .product-title,
+body.light-theme .cart-title,
+body.light-theme .page-title,
+body.light-theme .why-title,
+body.light-theme .welcome-title,
+body.light-theme .footer-col h4,
+body.light-theme .hero-title {
+  color: #0a0a0a !important;
+}
+
+body.light-theme p,
+body.light-theme span,
+body.light-theme div:not(.logo-img):not(.social-btn),
+body.light-theme li,
+body.light-theme a:not(.btn):not(.social-btn):not(.logo),
+body.light-theme .section-sub,
+body.light-theme .product-desc,
+body.light-theme .why-card p,
+body.light-theme .testimonial-quote,
+body.light-theme .testimonial-author span,
+body.light-theme .footer p,
+body.light-theme .footer a,
+body.light-theme .footer-bottom p,
+body.light-theme .mobile-nav-link,
+body.light-theme .contact-info-item p,
+body.light-theme .contact-info-item span,
+body.light-theme .form-group label,
+body.light-theme .form-group input,
+body.light-theme .form-group textarea,
+body.light-theme .newsletter-text,
+body.light-theme .stat-label {
+  color: #222222 !important;
+}
+
+body.light-theme .form-group input::placeholder,
+body.light-theme .form-group textarea::placeholder,
+body.light-theme .newsletter-field input::placeholder {
+  color: #666666 !important;
+}
+
+body.light-theme .stat-number,
+body.light-theme .product-price,
+body.light-theme .price,
+body.light-theme .section-tag,
+body.light-theme .welcome-ornament {
+  color: #8b6d34 !important;
+}
+
+body.light-theme .why-card,
+body.light-theme .testimonial-card,
+body.light-theme .product-card,
+body.light-theme .cat-card,
+body.light-theme .contact-form,
+body.light-theme .contact-info-card,
+body.light-theme .welcome-box,
+body.light-theme .cart-sidebar,
+body.light-theme .mobile-nav {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(160, 132, 79, 0.3) !important;
+  color: #111111 !important;
+}
+
+body.light-theme .social-btn {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: #111111 !important;
+  border-color: rgba(160, 132, 79, 0.3) !important;
+}
+
+body.light-theme .social-btn:hover {
+  background: #8b6d34 !important;
+  color: #ffffff !important;
+}
+
+/* Logo visibility */
+.logo-img-dark {
+  display: none !important;
+}
+.logo-img-light {
+  display: block !important;
+}
+
+body.light-theme .logo-img-dark {
+  display: block !important;
+}
+body.light-theme .logo-img-light {
+  display: none !important;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+.logo:hover .logo-img {
+  opacity: 0.8;
+}
+
+/* Footer & Auth logo adjustments */
+.footer-logo .logo-img,
+.auth-logo .logo-img {
+  height: 36px;
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-200);
+  border: 1px solid var(--border-gold);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin-right: 0.5rem;
+}
+.theme-toggle-btn:hover {
+  background: rgba(201, 169, 110, 0.1);
+  color: var(--gold-300);
+  border-color: var(--gold-300);
+}
+
+/* Toggle icon display */
+.theme-toggle-btn .theme-icon-sun {
+  display: none;
+}
+.theme-toggle-btn .theme-icon-moon {
+  display: block;
+}
+
+body.light-theme .theme-toggle-btn .theme-icon-sun {
+  display: block;
+}
+body.light-theme .theme-toggle-btn .theme-icon-moon {
+  display: none;
+}
+
+/* ==========================================================================
+   TIKTOK PRÊT-À-PORTER BANNER & SECTION
+   ========================================================================== */
+.tiktok-section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.tiktok-card {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.98));
+  border: 1px solid var(--gold-300);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 169, 110, 0.12);
+}
+
+.tiktok-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.tiktok-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(201, 169, 110, 0.15);
+  color: var(--gold-200);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.tiktok-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--text-100);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.btn-tiktok {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #ffffff !important;
+  border: 1px solid var(--gold-300);
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(201, 169, 110, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.btn-tiktok:hover {
+  background: linear-gradient(135deg, var(--gold-300), var(--gold-200));
+  color: #080808 !important;
+  border-color: var(--gold-200);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(201, 169, 110, 0.4);
+}
+
+.tiktok-description {
+  font-size: clamp(0.92rem, 2vw, 1.08rem);
+  color: var(--text-200);
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.75;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+body.light-theme .tiktok-card {
+  background: linear-gradient(135deg, rgba(245, 237, 216, 0.98), rgba(234, 225, 204, 0.95));
+  border-color: rgba(160, 132, 79, 0.35);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .tiktok-title {
+  color: #111111;
+}
+
+body.light-theme .tiktok-description {
+  color: #222222;
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(160, 132, 79, 0.2);
+}
+
+

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collection Femmes ChicAhmed — Robes, trench-coats, tailleurs et accessoires premium pour la femme élégante.">
+  <title>Collection Femmes | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/categorie.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">Chic<span>Ahmed</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="homme.html" class="nav-link">Hommes</a>
+        <a href="femme.html" class="nav-link active">Femmes</a>
+        <a href="costumes.html" class="nav-link">Costumes</a>
+        <a href="chaussures.html" class="nav-link">Chaussures</a>
+        <a href="ceintures.html" class="nav-link">Ceintures</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="btn-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+          Commander
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">Accueil</a>
+    <a href="homme.html" class="mobile-nav-link">Hommes</a>
+    <a href="femme.html" class="mobile-nav-link">Femmes</a>
+    <a href="costumes.html" class="mobile-nav-link">Costumes</a>
+    <a href="chaussures.html" class="mobile-nav-link">Chaussures</a>
+    <a href="ceintures.html" class="mobile-nav-link">Ceintures</a>
+    <a href="apropos.html" class="mobile-nav-link">À propos</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cat-page-hero">
+    <div class="cat-page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1600&auto=format&fit=crop')"></div>
+    <div class="cat-page-hero-overlay"></div>
+    <div class="cat-page-hero-content">
+      <div class="container">
+        <span class="cat-page-tag">✦ Collection 2026</span>
+        <h1 class="cat-page-title">Collection<br>Femmes</h1>
+        <p class="cat-page-sub">La grâce féminine sublimée par des coupes architecturales, des matières précieuses et un style intemporel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENU -->
+  <main style="padding: 0 0 6rem; background: var(--black);">
+    <div class="container">
+
+      <nav class="cat-breadcrumb" aria-label="Fil d'ariane">
+        <div class="cat-breadcrumb-inner">
+          <a href="index.html">Accueil</a> › <span>Femmes</span>
+        </div>
+      </nav>
+
+      <div class="cat-toolbar">
+        <p class="cat-count"><strong>12</strong> articles</p>
+        <div class="cat-sort">
+          <label for="sort-femme">Trier par :</label>
+          <select id="sort-femme" onchange="sortProducts(this.value)">
+            <option value="featured">Popularité</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="newest">Nouveautés</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cat-products-grid" id="products-grid">
+
+        <!-- Produit 1 -->
+        <div class="product-card reveal" data-price="155000" data-date="2026-07">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=700&auto=format&fit=crop" alt="Trench-coat signature" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge">Best Seller</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Manteaux</div>
+            <h3 class="product-name">Trench-coat signature</h3>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-desc">Lyocell fluide, ceinture amovible. La sophistication au naturel.</p>
+            <div class="product-footer">
+              <span class="product-price">155 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Trench-coat." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="product-card reveal" data-delay="80" data-price="120000" data-date="2026-07">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=700&auto=format&fit=crop" alt="Robe fourreau midi" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20fourreau." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge">Nouveau</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Robes</div>
+            <h3 class="product-name">Robe fourreau midi</h3>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-desc">Crêpe de soie, col bénitier, fermeture invisible dans le dos.</p>
+            <div class="product-footer">
+              <span class="product-price">120 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Robe%20fourreau." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="product-card reveal" data-delay="160" data-price="175000" data-date="2026-06">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=700&auto=format&fit=crop" alt="Tailleur pantalon élégant" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Tailleur%20pantalon." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Tailleurs</div>
+            <h3 class="product-name">Tailleur pantalon élégant</h3>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-desc">Laine fine, veste croisée, pantalon taille haute. Autorité & féminité.</p>
+            <div class="product-footer">
+              <span class="product-price">175 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Tailleur%20pantalon." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 4 -->
+        <div class="product-card reveal" data-price="75000" data-date="2026-05">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=700&auto=format&fit=crop" alt="Blouse en soie naturelle" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Blouse%20soie." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+            <span class="product-badge sale">−20%</span>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Chemisiers</div>
+            <h3 class="product-name">Blouse en soie naturelle</h3>
+            <div class="product-stars">★★★★☆</div>
+            <p class="product-desc">100% soie naturelle, col lavallière, poignets boutonnés.</p>
+            <div class="product-footer">
+              <div>
+                <span class="product-price">75 000 FCFA</span>
+                <span class="product-old-price">95 000 FCFA</span>
+              </div>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Blouse%20soie." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 5 -->
+        <div class="product-card reveal" data-delay="80" data-price="98000" data-date="2026-06">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=700&auto=format&fit=crop" alt="Manteau oversized camel" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20camel." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Manteaux</div>
+            <h3 class="product-name">Manteau oversized camel</h3>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-desc">Laine mélangée, coupe oversize, poches latérales plaquées.</p>
+            <div class="product-footer">
+              <span class="product-price">98 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20le%20Manteau%20camel." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit 6 -->
+        <div class="product-card reveal" data-delay="160" data-price="55000" data-date="2026-07">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=700&auto=format&fit=crop" alt="Jupe crayon taille haute" loading="lazy">
+            <div class="product-overlay">
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Jupe%20crayon." target="_blank" rel="noopener" class="product-quick-btn">Commander</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Jupes</div>
+            <h3 class="product-name">Jupe crayon taille haute</h3>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-desc">Crêpe double face, fente arrière, fermeture zippée invisible.</p>
+            <div class="product-footer">
+              <span class="product-price">55 000 FCFA</span>
+              <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Jupe%20crayon." target="_blank" rel="noopener" class="btn-product-wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cat-cta reveal">
+        <h2>Une pièce sur mesure ?</h2>
+        <p>Nos stylistes créent des tenues exclusives selon vos mensurations et vos envies. Contactez-nous via WhatsApp.</p>
+        <div class="cat-cta-actions">
+          <a href="https://wa.me/212710492846?text=Bonjour%20ChicAhmed%2C%20je%20recherche%20une%20cr%C3%A9ation%20sur%20mesure%20femme." target="_blank" rel="noopener" class="btn btn-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:.4rem"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+            Commander sur WhatsApp
+          </a>
+          <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background:var(--dark);border-top:1px solid rgba(201,169,110,.12);padding:2rem 0">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <a href="index.html" class="logo" style="font-size:1.2rem">Chic<span>Ahmed</span></a>
+      <p style="font-size:.75rem;color:var(--gray)">© 2026 ChicAhmed · Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/212710492846" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+  </a>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Retour en haut">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    function sortProducts(value) {
+      const grid = document.getElementById('products-grid');
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      cards.sort((a, b) => {
+        if (value === 'price-asc') return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+        if (value === 'price-desc') return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+        if (value === 'newest') return b.dataset.date.localeCompare(a.dataset.date);
+        return 0;
+      });
+      cards.forEach(c => grid.appendChild(c));
+    }
+  </script>
+</body>
+</html>
