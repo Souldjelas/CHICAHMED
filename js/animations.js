@@ -34,7 +34,7 @@ function initScrollReveal() {
   elements.forEach(el => {
     const parent = el.parentElement;
     const key = parent ? parent.dataset.revealGroup || Math.random() : Math.random();
-    parent.dataset.revealGroup = key;
+    if (parent) parent.dataset.revealGroup = key;
     if (!groups[key]) groups[key] = [];
     groups[key].push(el);
   });
@@ -70,16 +70,23 @@ function initHoverTilt() {
   const cards = document.querySelectorAll('.product-card');
   
   cards.forEach(card => {
+    let ticking = false;
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const rotX = ((y - cy) / cy) * -3;
-      const rotY = ((x - cx) / cx) * 3;
-      card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
-    });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const cx = rect.width / 2;
+          const cy = rect.height / 2;
+          const rotX = ((y - cy) / cy) * -3;
+          const rotY = ((x - cx) / cx) * 3;
+          card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
 
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';

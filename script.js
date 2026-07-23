@@ -23,14 +23,21 @@
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
 
-  // Simule un chargement pendant 2s, puis masque
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      preloader.classList.add('hidden');
-      // Déclenche la modale de bienvenue après le preloader
-      setTimeout(showWelcomeModal, 400);
-    }, 1800);
-  });
+  let hidden = false;
+  const hidePreloader = () => {
+    if (hidden) return;
+    hidden = true;
+    preloader.classList.add('hidden');
+    setTimeout(showWelcomeModal, 400);
+  };
+
+  if (document.readyState === 'complete') {
+    hidePreloader();
+  } else {
+    window.addEventListener('load', hidePreloader, { once: true });
+    // Safety fallback to guarantee preloader disappears smoothly even on slow networks
+    setTimeout(hidePreloader, 2500);
+  }
 })();
 
 /* ==========================================================================
@@ -585,17 +592,24 @@ function closeWelcomeModal() {
   const cards = document.querySelectorAll('.product-card, .cat-card');
 
   cards.forEach(card => {
+    let ticking = false;
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width  / 2;
-      const cy = rect.height / 2;
-      const rotX = ((y - cy) / cy) * -3;
-      const rotY = ((x - cx) / cx) *  3;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const cx = rect.width  / 2;
+          const cy = rect.height / 2;
+          const rotX = ((y - cy) / cy) * -3;
+          const rotY = ((x - cx) / cx) *  3;
 
-      card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-5px)`;
-    });
+          card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
 
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
