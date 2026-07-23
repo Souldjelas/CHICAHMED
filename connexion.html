@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Se connecter à votre compte ChicAhmed — Accédez à vos commandes, favoris et historique.">
+  <title>Se connecter | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER minimal -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html" class="nav-link">Boutique</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="openCartSidebar()" style="position:relative" aria-label="Panier">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html" class="mobile-nav-link">Boutique</a>
+    </div>
+  </nav>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h3>Votre Panier</h3><button class="cart-close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total</span><span id="cart-subtotal-price">0 FCFA</span></div>
+      <a href="panier.html" class="btn btn-primary" onclick="closeCartSidebar()">Voir le panier</a>
+    </div>
+  </aside>
+
+  <!-- AUTH LAYOUT -->
+  <div class="auth-layout">
+    <div class="auth-box">
+
+      <div class="auth-logo">
+        <div class="logo-text">CHIC <span>AHMED</span></div>
+      </div>
+
+      <h1 class="auth-title">Bon retour</h1>
+      <p class="auth-subtitle">Connectez-vous pour accéder à votre compte.</p>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <div class="auth-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" class="auth-input" placeholder="votre@email.com" required autocomplete="email">
+          <span class="auth-error-msg" id="err-login-email"></span>
+        </div>
+
+        <div class="auth-field">
+          <label for="login-password">Mot de passe</label>
+          <div class="auth-password-wrap">
+            <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" class="toggle-pwd" onclick="togglePasswordVisibility('login-password', this)" aria-label="Afficher le mot de passe">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="auth-error-msg" id="err-login-password"></span>
+        </div>
+
+        <div class="auth-options">
+          <label class="auth-remember">
+            <input type="checkbox" id="remember-me">
+            Se souvenir de moi
+          </label>
+          <a href="javascript:void(0)" onclick="alert('Pour réinitialiser votre mot de passe, veuillez contacter notre support client sur WhatsApp (+212 710 492 846) ou entrer votre email.')" class="auth-forgot">Mot de passe oublié ?</a>
+        </div>
+
+        <button type="submit" class="auth-submit" id="login-submit">Se connecter</button>
+
+        <p class="form-message" id="login-msg"></p>
+      </form>
+
+      <div class="auth-divider">ou</div>
+
+      <p class="auth-switch">
+        Pas encore de compte ? <a href="inscription.html">Créer un compte</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  function togglePasswordVisibility(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (input.type === 'password') {
+      input.type = 'text';
+      btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    } else {
+      input.type = 'password';
+      btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+    }
+  }
+
+  document.getElementById('login-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const msg = document.getElementById('login-msg');
+    let hasError = false;
+
+    document.getElementById('err-login-email').textContent = '';
+    document.getElementById('err-login-password').textContent = '';
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById('err-login-email').textContent = 'Email invalide.';
+      hasError = true;
+    }
+    if (password.length < 6) {
+      document.getElementById('err-login-password').textContent = 'Mot de passe trop court (6 caractères min).';
+      hasError = true;
+    }
+
+    if (hasError) return;
+
+    const btn = document.getElementById('login-submit');
+    btn.textContent = 'Connexion…';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      msg.textContent = '✓ Connexion réussie ! Redirection…';
+      msg.className = 'form-message success';
+      setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+    }, 900);
+  });
+  </script>
+</body>
+</html>

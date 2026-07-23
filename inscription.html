@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Créer un compte ChicAhmed — Inscrivez-vous pour profiter de vos avantages exclusifs.">
+  <title>Créer un compte | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html" class="nav-link">Boutique</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="openCartSidebar()" style="position:relative" aria-label="Panier">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html" class="mobile-nav-link">Boutique</a>
+    </div>
+  </nav>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h3>Votre Panier</h3><button class="cart-close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total</span><span id="cart-subtotal-price">0 FCFA</span></div>
+      <a href="panier.html" class="btn btn-primary" onclick="closeCartSidebar()">Voir le panier</a>
+    </div>
+  </aside>
+
+  <!-- AUTH LAYOUT -->
+  <div class="auth-layout">
+    <div class="auth-box" style="max-width:500px">
+
+      <div class="auth-logo">
+        <div class="logo-text">CHIC <span>AHMED</span></div>
+      </div>
+
+      <h1 class="auth-title">Créer un compte</h1>
+      <p class="auth-subtitle">Rejoignez la communauté ChicAhmed et profitez d'avantages exclusifs.</p>
+
+      <form class="auth-form" id="register-form" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="auth-field">
+            <label for="r-firstname">Prénom</label>
+            <input type="text" id="r-firstname" class="auth-input" placeholder="Ahmed" required autocomplete="given-name">
+            <span class="auth-error-msg" id="err-r-firstname"></span>
+          </div>
+          <div class="auth-field">
+            <label for="r-lastname">Nom</label>
+            <input type="text" id="r-lastname" class="auth-input" placeholder="Chic" required autocomplete="family-name">
+            <span class="auth-error-msg" id="err-r-lastname"></span>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="r-email">Email</label>
+          <input type="email" id="r-email" class="auth-input" placeholder="votre@email.com" required autocomplete="email">
+          <span class="auth-error-msg" id="err-r-email"></span>
+        </div>
+
+        <div class="auth-field">
+          <label for="r-phone">Téléphone (optionnel)</label>
+          <input type="tel" id="r-phone" class="auth-input" placeholder="+228 XX XX XX XX" autocomplete="tel">
+        </div>
+
+        <div class="auth-field">
+          <label for="r-password">Mot de passe</label>
+          <div class="auth-password-wrap">
+            <input type="password" id="r-password" class="auth-input" placeholder="8 caractères minimum" required autocomplete="new-password">
+            <button type="button" class="toggle-pwd" onclick="togglePwd('r-password', this)" aria-label="Afficher">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div id="pwd-strength" style="height:3px;border-radius:2px;margin-top:.4rem;background:var(--bg-3);transition:background .3s"></div>
+          <span class="auth-error-msg" id="err-r-password"></span>
+        </div>
+
+        <div class="auth-field">
+          <label for="r-confirm">Confirmer le mot de passe</label>
+          <input type="password" id="r-confirm" class="auth-input" placeholder="Répétez votre mot de passe" required autocomplete="new-password">
+          <span class="auth-error-msg" id="err-r-confirm"></span>
+        </div>
+
+        <label class="auth-remember">
+          <input type="checkbox" id="r-terms" required>
+          J'accepte les <a href="javascript:void(0)" onclick="alert('Conditions générales d\'utilisation CHIC AHMED:\n1. Respect de la confidentialité et des données personnelles.\n2. Produits 100% authentiques et sous garantie.\n3. Livraison rapide et retours sous 30 jours.')" style="color:var(--gold-300)">conditions d'utilisation</a>
+        </label>
+        <span class="auth-error-msg" id="err-r-terms"></span>
+
+        <button type="submit" class="auth-submit" id="register-submit">Créer mon compte</button>
+        <p class="form-message" id="register-msg"></p>
+      </form>
+
+      <div class="auth-divider">ou</div>
+
+      <p class="auth-switch">
+        Déjà un compte ? <a href="connexion.html">Se connecter</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  function togglePwd(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    input.type = input.type === 'password' ? 'text' : 'password';
+  }
+
+  // Jauge force mot de passe
+  document.getElementById('r-password')?.addEventListener('input', (e) => {
+    const pwd = e.target.value;
+    const bar = document.getElementById('pwd-strength');
+    if (!bar) return;
+    let score = 0;
+    if (pwd.length >= 8) score++;
+    if (/[A-Z]/.test(pwd)) score++;
+    if (/[0-9]/.test(pwd)) score++;
+    if (/[^A-Za-z0-9]/.test(pwd)) score++;
+    const colors = ['', '#f87171', '#fb923c', '#facc15', '#4ade80'];
+    const widths = ['0%', '25%', '50%', '75%', '100%'];
+    bar.style.background = colors[score] || 'var(--bg-3)';
+    bar.style.width = widths[score];
+  });
+
+  document.getElementById('register-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let hasError = false;
+
+    const fn = document.getElementById('r-firstname').value.trim();
+    const ln = document.getElementById('r-lastname').value.trim();
+    const email = document.getElementById('r-email').value.trim();
+    const pwd = document.getElementById('r-password').value;
+    const confirm = document.getElementById('r-confirm').value;
+    const terms = document.getElementById('r-terms').checked;
+
+    // Reset
+    ['r-firstname','r-lastname','r-email','r-password','r-confirm','r-terms'].forEach(id => {
+      const el = document.getElementById('err-' + id);
+      if (el) el.textContent = '';
+    });
+
+    if (fn.length < 2) { document.getElementById('err-r-firstname').textContent = 'Prénom requis.'; hasError = true; }
+    if (ln.length < 2) { document.getElementById('err-r-lastname').textContent = 'Nom requis.'; hasError = true; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('err-r-email').textContent = 'Email invalide.'; hasError = true; }
+    if (pwd.length < 8) { document.getElementById('err-r-password').textContent = 'Minimum 8 caractères.'; hasError = true; }
+    if (pwd !== confirm) { document.getElementById('err-r-confirm').textContent = 'Les mots de passe ne correspondent pas.'; hasError = true; }
+    if (!terms) { document.getElementById('err-r-terms').textContent = 'Veuillez accepter les conditions.'; hasError = true; }
+
+    if (hasError) return;
+
+    const btn = document.getElementById('register-submit');
+    btn.textContent = 'Création…';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      const msg = document.getElementById('register-msg');
+      msg.textContent = '✓ Compte créé avec succès ! Redirection…';
+      msg.className = 'form-message success';
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+    }, 1000);
+  });
+  </script>
+</body>
+</html>

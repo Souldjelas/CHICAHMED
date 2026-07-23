@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Votre panier ChicAhmed — Consultez et validez vos articles. Livraison express, paiement sécurisé.">
+  <title>Mon Panier | CHIC AHMED</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html?gender=homme" class="nav-link">Homme</a>
+        <a href="boutique.html?gender=femme" class="nav-link">Femme</a>
+        <a href="boutique.html" class="nav-link">Collections</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-search-open aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="favoris.html" class="nav-icon-btn" style="position:relative" aria-label="Favoris">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge-count wishlist-badge">0</span>
+        </a>
+        <button class="nav-icon-btn active" onclick="window.location.href='panier.html'" style="position:relative" aria-label="Panier">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html" class="mobile-nav-link">Boutique</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <div id="search-modal" class="search-modal">
+    <div class="search-inner">
+      <div class="search-close"><button id="search-close-btn">&times;</button></div>
+      <div class="search-field">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-400);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Rechercher…" autocomplete="off">
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="page-header-tag">Votre sélection</span>
+    <h1 class="page-header-title">Mon Panier</h1>
+  </div>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="container">
+      <div id="cart-page-content"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p class="copyright">© 2026 CHIC AHMED. Tous droits réservés.</p>
+      <div class="payment-methods">VISA · MASTERCARD · MOBILE MONEY</div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', renderCartPage);
+
+  function renderCartPage() {
+    const content = document.getElementById('cart-page-content');
+    if (!content) return;
+
+    const cart = getCart();
+    const db = window.PRODUCTS || [];
+
+    if (!cart.length) {
+      content.innerHTML = `
+        <div class="cart-empty-state">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <h3>Votre panier est vide</h3>
+          <p>Découvrez nos collections et ajoutez des pièces à votre panier.</p>
+          <a href="boutique.html" class="btn btn-primary">Voir la boutique</a>
+        </div>`;
+      return;
+    }
+
+    let subtotal = 0;
+    const rows = cart.map(item => {
+      const p = db.find(x => x.id === item.id);
+      if (!p) return '';
+      const lineTotal = p.price * item.quantity;
+      subtotal += lineTotal;
+      return `
+        <div class="cart-table-row" id="page-cart-row-${item.id}">
+          <div class="cart-product-info">
+            <img class="cart-product-img" src="${p.images[0]}" alt="${p.name}" loading="lazy">
+            <div>
+              <a href="produit.html?id=${p.id}" class="cart-product-name">${p.name}</a>
+              <span class="cart-product-meta">${item.size ? `Taille: ${item.size}` : ''}${item.color ? ` · ${item.color}` : ''}</span>
+            </div>
+          </div>
+          <span class="cart-product-price">${formatPrice(p.price)}</span>
+          <div class="cart-qty-ctrl">
+            <button onclick="pageChangeQty('${item.id}', -1)">−</button>
+            <span id="page-qty-${item.id}">${item.quantity}</span>
+            <button onclick="pageChangeQty('${item.id}', 1)">+</button>
+          </div>
+          <span class="cart-product-total" id="page-total-${item.id}">${formatPrice(lineTotal)}</span>
+          <button class="cart-remove-btn" onclick="pageRemoveItem('${item.id}')" aria-label="Supprimer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>`;
+    }).join('');
+
+    const shipping = subtotal >= 50000 ? 0 : 5000;
+    const total = subtotal + shipping;
+
+    const waMsg = `Bonjour CHIC AHMED, je souhaite commander via WhatsApp (${cart.length} article${cart.length > 1 ? 's' : ''}, total: ${formatPrice(total)}).`;
+
+    content.innerHTML = `
+      <div class="cart-page-grid">
+        <div>
+          <div class="cart-table-header">
+            <span>Produit</span>
+            <span>Prix</span>
+            <span>Quantité</span>
+            <span>Total</span>
+            <span></span>
+          </div>
+          ${rows}
+          <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+            <a href="boutique.html" class="btn btn-ghost" style="font-size:.75rem">
+              ← Continuer mes achats
+            </a>
+          </div>
+        </div>
+
+        <div class="cart-summary">
+          <h3>Résumé</h3>
+          <div class="coupon-form">
+            <input type="text" placeholder="Code promo…" id="coupon-input">
+            <button onclick="applyCoupon()">Appliquer</button>
+          </div>
+          <div class="summary-row"><span>Sous-total</span><span id="page-subtotal">${formatPrice(subtotal)}</span></div>
+          <div class="summary-row ${shipping === 0 ? 'free-shipping' : ''}">
+            <span>Livraison</span>
+            <span>${shipping === 0 ? '✓ Offerte' : formatPrice(shipping)}</span>
+          </div>
+          ${shipping > 0 ? `<div style="font-size:.72rem;color:var(--text-500);margin-top:-.5rem;margin-bottom:.5rem">Plus que ${formatPrice(50000 - subtotal)} pour la livraison offerte.</div>` : ''}
+          <hr class="summary-divider">
+          <div class="summary-total">
+            <span class="total-label">Total TTC</span>
+            <span class="total-amount" id="page-total-all">${formatPrice(total)}</span>
+          </div>
+          <button class="summary-checkout-btn">
+            Procéder au paiement
+          </button>
+          <a href="https://wa.me/22890000000?text=${encodeURIComponent(waMsg)}" target="_blank" class="summary-wa-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+            Commander via WhatsApp
+          </a>
+          <p class="summary-note">🔒 Paiement sécurisé · Retour 30j gratuit</p>
+        </div>
+      </div>`;
+  }
+
+  window.pageChangeQty = function(id, delta) {
+    changeQty(id, delta);
+    renderCartPage();
+  };
+
+  window.pageRemoveItem = function(id) {
+    removeCartItem(id);
+    renderCartPage();
+  };
+
+  window.applyCoupon = function() {
+    const code = document.getElementById('coupon-input')?.value.trim().toUpperCase();
+    if (code === 'CHIC10') {
+      showToast('Code promo −10% appliqué !', '🎉');
+    } else {
+      showToast('Code promo invalide ou expiré', '⚠️');
+    }
+  };
+  </script>
+</body>
+</html>

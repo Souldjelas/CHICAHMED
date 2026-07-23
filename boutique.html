@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boutique CHIC AHMED — Parcourez notre catalogue mode premium. Vêtements, sneakers et accessoires de luxe. Filtres avancés par genre, taille, couleur et prix.">
+  <title>Boutique | CHIC AHMED — Mode Luxe Lomé, Togo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/boutique.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER (identique index) -->
+  <header class="header">
+    <div class="container navbar">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo">CHIC <span>AHMED</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="boutique.html?gender=homme" class="nav-link">Homme</a>
+        <a href="boutique.html?gender=femme" class="nav-link">Femme</a>
+        <a href="boutique.html?filter=new" class="nav-link">Nouveautés</a>
+        <a href="boutique.html" class="nav-link active">Collections</a>
+        <a href="boutique.html?filter=promo" class="nav-link">Promotions</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-search-open aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="connexion.html" class="nav-icon-btn" aria-label="Mon compte">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="favoris.html" class="nav-icon-btn" aria-label="Favoris" style="position:relative">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge-count wishlist-badge">0</span>
+        </a>
+        <button class="nav-icon-btn" onclick="openCartSidebar()" aria-label="Panier" style="position:relative">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6L18 2H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Accueil</a>
+      <a href="boutique.html?gender=homme" class="mobile-nav-link">Homme</a>
+      <a href="boutique.html?gender=femme" class="mobile-nav-link">Femme</a>
+      <a href="boutique.html?filter=new" class="mobile-nav-link">Nouveautés</a>
+      <a href="boutique.html" class="mobile-nav-link">Collections</a>
+      <a href="boutique.html?filter=promo" class="mobile-nav-link">Promotions</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"><a href="connexion.html" class="btn btn-outline">Se connecter</a></div>
+  </nav>
+
+  <div id="search-modal" class="search-modal">
+    <div class="search-inner">
+      <div class="search-close"><button id="search-close-btn">&times;</button></div>
+      <div class="search-field">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-400);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Rechercher…" autocomplete="off">
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Votre Panier</h3>
+      <button class="cart-close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal"><span>Sous-total</span><span class="cart-subtotal-price" id="cart-subtotal-price">0 FCFA</span></div>
+      <a href="panier.html" class="btn btn-primary" onclick="closeCartSidebar()">Voir le panier</a>
+      <p class="cart-note">Livraison offerte dès 50 000 FCFA</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="container boutique-layout">
+
+      <!-- SIDEBAR FILTRES -->
+      <aside class="filters-sidebar" id="filters-sidebar">
+        <div class="filters-header">
+          <span class="filters-header h2" style="font-family:var(--font-body);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-300)">Filtres</span>
+          <button class="filters-reset" onclick="resetFilters()">Réinitialiser</button>
+        </div>
+
+        <!-- Genre -->
+        <div class="filter-group open" id="fg-gender">
+          <div class="filter-group-label" onclick="toggleFilterGroup('fg-gender')">
+            Genre
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="gender" value="homme" id="f-homme"> <span class="filter-option-label">Homme</span><span class="filter-count"></span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="gender" value="femme" id="f-femme"> <span class="filter-option-label">Femme</span><span class="filter-count"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Catégorie -->
+        <div class="filter-group open" id="fg-category">
+          <div class="filter-group-label" onclick="toggleFilterGroup('fg-category')">
+            Catégorie
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" name="category" value="vestes"> <span class="filter-option-label">Vestes & Manteaux</span></label>
+            <label class="filter-option"><input type="checkbox" name="category" value="t-shirts"> <span class="filter-option-label">T-shirts & Chemises</span></label>
+            <label class="filter-option"><input type="checkbox" name="category" value="jeans"> <span class="filter-option-label">Jeans & Pantalons</span></label>
+            <label class="filter-option"><input type="checkbox" name="category" value="sneakers"> <span class="filter-option-label">Sneakers</span></label>
+            <label class="filter-option"><input type="checkbox" name="category" value="accessoires"> <span class="filter-option-label">Accessoires</span></label>
+          </div>
+        </div>
+
+        <!-- Prix -->
+        <div class="filter-group open" id="fg-price">
+          <div class="filter-group-label" onclick="toggleFilterGroup('fg-price')">
+            Prix max
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-options">
+            <div class="price-range-display">
+              <span>0 FCFA</span>
+              <span id="price-display">250 000 FCFA</span>
+            </div>
+            <input type="range" class="price-slider" id="price-slider" min="0" max="250000" value="250000" step="5000">
+          </div>
+        </div>
+
+        <!-- Taille -->
+        <div class="filter-group" id="fg-size">
+          <div class="filter-group-label" onclick="toggleFilterGroup('fg-size')">
+            Taille
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" name="size" value="XS"> <span class="filter-option-label">XS</span></label>
+            <label class="filter-option"><input type="checkbox" name="size" value="S"> <span class="filter-option-label">S</span></label>
+            <label class="filter-option"><input type="checkbox" name="size" value="M"> <span class="filter-option-label">M</span></label>
+            <label class="filter-option"><input type="checkbox" name="size" value="L"> <span class="filter-option-label">L</span></label>
+            <label class="filter-option"><input type="checkbox" name="size" value="XL"> <span class="filter-option-label">XL</span></label>
+            <label class="filter-option"><input type="checkbox" name="size" value="XXL"> <span class="filter-option-label">XXL</span></label>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="filter-group" id="fg-tags">
+          <div class="filter-group-label" onclick="toggleFilterGroup('fg-tags')">
+            Collections
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" name="tag" value="new"> <span class="filter-option-label">Nouveautés</span></label>
+            <label class="filter-option"><input type="checkbox" name="tag" value="promo"> <span class="filter-option-label">Promotions</span></label>
+            <label class="filter-option"><input type="checkbox" name="tag" value="bestseller"> <span class="filter-option-label">Best Sellers</span></label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CATALOGUE -->
+      <div class="catalogue-zone">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" id="breadcrumb-current">Boutique</span>
+        </nav>
+
+        <!-- Filtres actifs -->
+        <div class="active-filters" id="active-filters"></div>
+
+        <!-- Top bar -->
+        <div class="catalogue-top">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <button class="mobile-filter-toggle" id="mobile-filter-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              Filtres
+            </button>
+            <span class="catalogue-count" id="catalogue-count">Chargement…</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div class="catalogue-sort">
+              <span class="sort-label">Trier :</span>
+              <select class="sort-select" id="sort-select">
+                <option value="default">Par défaut</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="new">Nouveautés</option>
+                <option value="popular">Popularité</option>
+                <option value="discount">Promotions</option>
+              </select>
+            </div>
+            <div class="grid-toggle">
+              <button class="grid-btn" data-cols="2" aria-label="2 colonnes">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </button>
+              <button class="grid-btn active" data-cols="3" aria-label="3 colonnes">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              </button>
+              <button class="grid-btn" data-cols="4" aria-label="4 colonnes">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="5" height="5"/><rect x="9" y="1" width="5" height="5"/><rect x="17" y="1" width="5" height="5"/><rect x="1" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/><rect x="17" y="9" width="5" height="5"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products grid -->
+        <div id="products-grid" class="products-grid"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER MINIMAL -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p class="copyright">© 2026 CHIC AHMED. Tous droits réservés.</p>
+      <div class="payment-methods">VISA · MASTERCARD · MOBILE MONEY</div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+  // ── BOUTIQUE LOGIC ──────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    initBoutique();
+  });
+
+  let activeFilters = {
+    gender: [],
+    category: [],
+    sizes: [],
+    tags: [],
+    maxPrice: 250000
+  };
+
+  function initBoutique() {
+    // Read URL params
+    const params = new URLSearchParams(location.search);
+    if (params.get('gender')) {
+      const g = params.get('gender');
+      activeFilters.gender = [g];
+      const checkbox = document.querySelector(`input[name="gender"][value="${g}"]`);
+      if (checkbox) checkbox.checked = true;
+      document.getElementById('breadcrumb-current').textContent = g.charAt(0).toUpperCase() + g.slice(1);
+    }
+    if (params.get('category')) {
+      const c = params.get('category');
+      activeFilters.category = [c];
+      const checkbox = document.querySelector(`input[name="category"][value="${c}"]`);
+      if (checkbox) checkbox.checked = true;
+    }
+    if (params.get('filter') === 'new') {
+      activeFilters.tags = ['new'];
+      const checkbox = document.querySelector('input[name="tag"][value="new"]');
+      if (checkbox) checkbox.checked = true;
+    }
+    if (params.get('filter') === 'promo') {
+      activeFilters.tags = ['promo'];
+      const checkbox = document.querySelector('input[name="tag"][value="promo"]');
+      if (checkbox) checkbox.checked = true;
+    }
+
+    renderProducts();
+    initFilterListeners();
+    initSortListener();
+    initGridToggle();
+  }
+
+  function renderProducts() {
+    const db = window.PRODUCTS || [];
+    let filtered = db.filter(p => {
+      if (activeFilters.gender.length && !activeFilters.gender.includes(p.gender)) return false;
+      if (activeFilters.category.length && !activeFilters.category.includes(p.category)) return false;
+      if (activeFilters.sizes.length && !activeFilters.sizes.some(s => p.sizes.includes(s))) return false;
+      if (activeFilters.tags.includes('new') && !p.isNew) return false;
+      if (activeFilters.tags.includes('promo') && !p.discount) return false;
+      if (activeFilters.tags.includes('bestseller') && !p.isBestSeller) return false;
+      if (p.price > activeFilters.maxPrice) return false;
+      return true;
+    });
+
+    // Sort
+    const sort = document.getElementById('sort-select')?.value || 'default';
+    switch (sort) {
+      case 'price-asc': filtered.sort((a, b) => a.price - b.price); break;
+      case 'price-desc': filtered.sort((a, b) => b.price - a.price); break;
+      case 'new': filtered = filtered.filter(p => p.isNew).concat(filtered.filter(p => !p.isNew)); break;
+      case 'popular': filtered.sort((a, b) => b.reviews - a.reviews); break;
+      case 'discount': filtered.sort((a, b) => (b.discount || 0) - (a.discount || 0)); break;
+    }
+
+    const grid = document.getElementById('products-grid');
+    const count = document.getElementById('catalogue-count');
+    if (count) count.textContent = `${filtered.length} produit${filtered.length > 1 ? 's' : ''}`;
+
+    if (!filtered.length) {
+      grid.innerHTML = `
+        <div class="no-results">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <h3>Aucun produit trouvé</h3>
+          <p>Essayez de modifier vos filtres.</p>
+          <button class="btn btn-outline" onclick="resetFilters()">Réinitialiser les filtres</button>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(p => renderProductCard(p)).join('');
+    renderActiveFilters();
+
+    // Scroll reveal for new cards
+    grid.querySelectorAll('.product-card').forEach((card, i) => {
+      card.classList.add('reveal');
+      card.style.transitionDelay = `${(i % 12) * 50}ms`;
+      setTimeout(() => card.classList.add('revealed'), 50);
+    });
+  }
+
+  function renderActiveFilters() {
+    const container = document.getElementById('active-filters');
+    if (!container) return;
+    const chips = [];
+
+    activeFilters.gender.forEach(g => {
+      chips.push(`<span class="filter-chip">${g.charAt(0).toUpperCase() + g.slice(1)} <button onclick="removeFilter('gender','${g}')">×</button></span>`);
+    });
+    activeFilters.category.forEach(c => {
+      chips.push(`<span class="filter-chip">${c} <button onclick="removeFilter('category','${c}')">×</button></span>`);
+    });
+    activeFilters.tags.forEach(t => {
+      chips.push(`<span class="filter-chip">${t} <button onclick="removeFilter('tags','${t}')">×</button></span>`);
+    });
+
+    container.innerHTML = chips.join('');
+  }
+
+  function removeFilter(type, value) {
+    if (type === 'gender') activeFilters.gender = activeFilters.gender.filter(x => x !== value);
+    if (type === 'category') activeFilters.category = activeFilters.category.filter(x => x !== value);
+    if (type === 'tags') activeFilters.tags = activeFilters.tags.filter(x => x !== value);
+
+    // Uncheck
+    document.querySelectorAll(`input[name="${type}"][value="${value}"]`).forEach(cb => cb.checked = false);
+    renderProducts();
+  }
+
+  function resetFilters() {
+    activeFilters = { gender: [], category: [], sizes: [], tags: [], maxPrice: 250000 };
+    document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
+    const slider = document.getElementById('price-slider');
+    if (slider) { slider.value = 250000; document.getElementById('price-display').textContent = '250 000 FCFA'; }
+    renderProducts();
+  }
+
+  function initFilterListeners() {
+    document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const name = cb.name;
+        const value = cb.value;
+        if (name === 'gender') {
+          cb.checked ? activeFilters.gender.push(value) : (activeFilters.gender = activeFilters.gender.filter(x => x !== value));
+        } else if (name === 'category') {
+          cb.checked ? activeFilters.category.push(value) : (activeFilters.category = activeFilters.category.filter(x => x !== value));
+        } else if (name === 'size') {
+          cb.checked ? activeFilters.sizes.push(value) : (activeFilters.sizes = activeFilters.sizes.filter(x => x !== value));
+        } else if (name === 'tag') {
+          cb.checked ? activeFilters.tags.push(value) : (activeFilters.tags = activeFilters.tags.filter(x => x !== value));
+        }
+        renderProducts();
+      });
+    });
+
+    const slider = document.getElementById('price-slider');
+    const display = document.getElementById('price-display');
+    slider?.addEventListener('input', () => {
+      activeFilters.maxPrice = parseInt(slider.value);
+      display.textContent = new Intl.NumberFormat('fr-FR').format(slider.value) + ' FCFA';
+      renderProducts();
+    });
+  }
+
+  function initSortListener() {
+    document.getElementById('sort-select')?.addEventListener('change', renderProducts);
+  }
+
+  function initGridToggle() {
+    const grid = document.getElementById('products-grid');
+    document.querySelectorAll('.grid-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.grid-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cols = btn.dataset.cols;
+        grid.className = 'products-grid';
+        if (cols === '2') grid.classList.add('grid-2');
+        if (cols === '4') grid.classList.add('grid-4');
+      });
+    });
+  }
+
+  function toggleFilterGroup(id) {
+    document.getElementById(id)?.classList.toggle('open');
+  }
+
+  window.toggleFilterGroup = toggleFilterGroup;
+  window.resetFilters = resetFilters;
+  window.removeFilter = removeFilter;
+  </script>
+</body>
+</html>

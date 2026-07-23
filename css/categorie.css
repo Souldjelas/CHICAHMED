@@ -1,0 +1,205 @@
+/* ==========================================================================
+   PAGES CATÉGORIES — CSS commun
+   Hommes / Femmes / Costumes / Chaussures / Ceintures
+   ========================================================================== */
+
+/* ── HERO CATÉGORIE ──────────────────────────────────────────── */
+.cat-page-hero {
+  position: relative;
+  height: 60dvh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cat-page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  transform: scale(1.06);
+  animation: catHeroZoom 10s ease-out forwards;
+}
+@keyframes catHeroZoom {
+  to { transform: scale(1); }
+}
+
+.cat-page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8,8,8,.92) 0%,
+    rgba(8,8,8,.4) 55%,
+    rgba(8,8,8,.1) 100%
+  );
+}
+
+.cat-page-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 4rem;
+  width: 100%;
+}
+
+.cat-page-tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeSlideUp .6s .2s var(--ease) forwards;
+}
+
+.cat-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.02;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeSlideUp .65s .4s var(--ease) forwards;
+}
+
+.cat-page-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  max-width: 500px;
+  opacity: 0;
+  animation: fadeSlideUp .65s .6s var(--ease) forwards;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── BREADCRUMB ──────────────────────────────────────────────── */
+.cat-breadcrumb {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 3rem;
+}
+
+.cat-breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .72rem;
+  color: var(--gray);
+}
+.cat-breadcrumb-inner a { transition: color .2s; }
+.cat-breadcrumb-inner a:hover { color: var(--gold-l); }
+.cat-breadcrumb-inner span { color: var(--gold); }
+
+/* ── TOOLBAR ─────────────────────────────────────────────────── */
+.cat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.cat-count {
+  font-size: .82rem;
+  color: var(--gray);
+}
+.cat-count strong { color: var(--gold); }
+
+.cat-sort {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.cat-sort label {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--gray);
+}
+
+.cat-sort select {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: .8rem;
+  padding: .5rem .85rem;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.cat-sort select:focus { border-color: var(--gold); }
+
+/* ── GRILLE PRODUITS ─────────────────────────────────────────── */
+.cat-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+/* ── CARTE PRODUIT (réutilise .product-card de style.css) ────── */
+
+/* ── SECTION CTA BAS DE PAGE ────────────────────────────────── */
+.cat-cta {
+  margin-top: 5rem;
+  padding: 4rem 3rem;
+  background: var(--dark);
+  border: 1px solid rgba(201,169,110,.2);
+  border-radius: var(--r-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cat-cta::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(201,169,110,.08), transparent 70%);
+  pointer-events: none;
+}
+
+.cat-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  margin-bottom: .75rem;
+}
+
+.cat-cta p {
+  color: var(--gray);
+  font-size: .95rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.cat-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cat-products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .cat-products-grid { grid-template-columns: repeat(2, 1fr); gap: .85rem; }
+  .cat-page-hero { height: 50dvh; }
+  .cat-cta { padding: 2.5rem 1.5rem; }
+}
+@media (max-width: 380px) {
+  .cat-products-grid { grid-template-columns: 1fr; }
+}
