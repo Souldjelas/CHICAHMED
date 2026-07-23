@@ -35,8 +35,8 @@
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
-    // Safety fallback to guarantee preloader disappears smoothly even on slow networks
-    setTimeout(hidePreloader, 2500);
+    // Safety fallback — réduit à 1.2s pour un affichage plus rapide
+    setTimeout(hidePreloader, 1200);
   }
 })();
 

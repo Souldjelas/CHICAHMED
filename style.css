@@ -408,9 +408,9 @@ p { font-weight: 300; line-height: 1.75; }
   width: 100%;
   z-index: 1000;
   height: var(--nav-h);
-  background: rgba(8,8,8,.82);
-  backdrop-filter: blur(22px) saturate(1.8);
-  -webkit-backdrop-filter: blur(22px) saturate(1.8);
+  background: rgba(8,8,8,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(201,169,110,.15);
   transition: var(--tr);
 }

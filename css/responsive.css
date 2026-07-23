@@ -211,6 +211,17 @@ img, svg, video, iframe {
     gap: 2rem !important;
   }
 
+  /* Gallery tagline */
+  .gallery-tagline-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .gallery-tagline {
+    padding: 2rem 1rem;
+  }
+  .gallery-quote-icon:last-child { display: none; }
+
   /* About */
   .about-values-grid { grid-template-columns: 1fr; }
 
