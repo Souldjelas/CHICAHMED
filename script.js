@@ -35,6 +35,7 @@
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
+    // Safety fallback — réduit à 1.2s pour un affichage plus rapide
     setTimeout(hidePreloader, 1200);
   }
 })();
@@ -46,20 +47,25 @@ function showWelcomeModal() {
   const modal = document.getElementById('welcome-modal');
   if (!modal) return;
 
+  // N'afficher qu'une fois par session
   if (sessionStorage.getItem('chicahmed_welcomed')) return;
 
+  // Affichage élégant
   modal.style.display = 'flex';
   requestAnimationFrame(() => {
     requestAnimationFrame(() => modal.classList.add('visible'));
   });
 
+  // Bouton "Découvrir la boutique"
   const btn = document.getElementById('welcome-btn');
   btn?.addEventListener('click', closeWelcomeModal);
 
+  // Fermeture sur clic hors de la box
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeWelcomeModal();
   });
 
+  // Fermeture Echap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeWelcomeModal();
   }, { once: true });
@@ -86,6 +92,7 @@ function closeWelcomeModal() {
   const overlay   = document.getElementById('mobile-overlay') || document.querySelector('.mobile-overlay');
   if (!header) return;
 
+  /* ── Scroll ── */
   const handleScroll = () => {
     if (window.scrollY > 50) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
@@ -93,6 +100,7 @@ function closeWelcomeModal() {
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
 
+  /* ── Hamburger ── */
   const closeMobileNav = () => {
     hamburger?.classList.remove('open');
     mobileNav?.classList.remove('active');
@@ -116,13 +124,16 @@ function closeWelcomeModal() {
 
   overlay?.addEventListener('click', closeMobileNav);
 
+  // Bouton de fermeture dans le menu mobile
   const closeBtn = mobileNav?.querySelector('.mobile-nav-close');
   closeBtn?.addEventListener('click', closeMobileNav);
 
+  // Fermer sur clic d'un lien mobile
   mobileNav?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileNav);
   });
 
+  // Fermer sur Echap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileNav?.classList.contains('active')) {
       closeMobileNav();
@@ -134,6 +145,7 @@ function closeWelcomeModal() {
    04. NAVIGATION FLUIDE + LIEN ACTIF
    ========================================================================== */
 (function initSmoothNav() {
+  // Défilement fluide sur tous les liens internes
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -148,6 +160,7 @@ function closeWelcomeModal() {
     });
   });
 
+  // Mettre à jour le lien actif au scroll
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-link');
   const headerH   = () => document.getElementById('header')?.offsetHeight || 80;
@@ -179,6 +192,7 @@ function closeWelcomeModal() {
 (function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length || !('IntersectionObserver' in window)) {
+    // Fallback : tout afficher
     elements.forEach(el => el.classList.add('revealed'));
     return;
   }
@@ -212,7 +226,7 @@ function closeWelcomeModal() {
 
   const animate = (el) => {
     const target   = parseInt(el.dataset.target || 0);
-    const duration = 2000;
+    const duration = 2000; // ms
     let startTime  = null;
 
     const step = (timestamp) => {
@@ -256,14 +270,16 @@ function closeWelcomeModal() {
   let current     = 0;
   let autoTimer   = null;
   let cardsVisible = 1;
-  const GAP       = 24;
+  const GAP       = 24; // 1.5rem
 
+  /* Calcul dynamique du nombre de cartes visibles */
   const getCardsVisible = () => {
     if (window.innerWidth >= 900) return 3;
     if (window.innerWidth >= 600) return 2;
     return 1;
   };
 
+  /* Créer les dots */
   const buildDots = () => {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
@@ -279,6 +295,7 @@ function closeWelcomeModal() {
     }
   };
 
+  /* Mise à jour des styles de carte */
   const updateCardSize = () => {
     cardsVisible = getCardsVisible();
     const trackW = track.parentElement?.offsetWidth || 900;
@@ -290,6 +307,7 @@ function closeWelcomeModal() {
     goTo(Math.min(current, Math.max(0, total - cardsVisible)));
   };
 
+  /* Déplacement */
   const goTo = (index) => {
     const maxIndex = Math.max(0, total - cardsVisible);
     current = Math.max(0, Math.min(index, maxIndex));
@@ -302,6 +320,7 @@ function closeWelcomeModal() {
     });
   };
 
+  /* Autoplay */
   const startAuto = () => {
     stopAuto();
     autoTimer = setInterval(() => {
@@ -311,9 +330,11 @@ function closeWelcomeModal() {
   };
   const stopAuto = () => { if (autoTimer) clearInterval(autoTimer); };
 
+  /* Contrôles */
   prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
   nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
 
+  /* Touch / drag */
   let touchStartX = 0;
   track.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
@@ -327,9 +348,11 @@ function closeWelcomeModal() {
     startAuto();
   }, { passive: true });
 
+  /* Pause on hover */
   track.addEventListener('mouseenter', stopAuto);
   track.addEventListener('mouseleave', startAuto);
 
+  /* Resize */
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -338,6 +361,7 @@ function closeWelcomeModal() {
     }, 200);
   }, { passive: true });
 
+  /* Init */
   updateCardSize();
   startAuto();
 })();
@@ -357,28 +381,38 @@ function closeWelcomeModal() {
 
   let currentIndex = 0;
 
+  /* Ouvrir */
   const openLightbox = (index) => {
     currentIndex = index;
     const item = items[index];
     const src  = item.dataset.src || item.querySelector('img')?.src;
+    const videoSrc = item.dataset.video;
     const cap  = item.dataset.caption || '';
 
-    lightboxImg.src = src;
-    lightboxImg.alt = cap;
-    if (lightboxCap) lightboxCap.textContent = cap;
+    const contentWrap = lightbox.querySelector('.lightbox-content');
+    if (contentWrap) {
+      if (videoSrc) {
+        contentWrap.innerHTML = `<video id="lightbox-video" src="${videoSrc}" controls autoplay style="max-height:80vh;max-width:100%;border-radius:8px;box-shadow:var(--shadow-lg);"></video><p id="lightbox-caption" class="lightbox-caption">${cap}</p>`;
+      } else {
+        contentWrap.innerHTML = `<img id="lightbox-img" src="${src}" alt="${cap}"><p id="lightbox-caption" class="lightbox-caption">${cap}</p>`;
+      }
+    }
 
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
-    lightboxImg.style.opacity    = '0';
-    setTimeout(() => { lightboxImg.style.opacity = '1'; lightboxImg.style.transition = 'opacity .35s'; }, 10);
   };
 
+  /* Fermer */
   const closeLightbox = () => {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
-    setTimeout(() => { lightboxImg.src = ''; }, 400);
+    const contentWrap = lightbox.querySelector('.lightbox-content');
+    if (contentWrap) {
+      contentWrap.innerHTML = `<img id="lightbox-img" src="" alt=""><p id="lightbox-caption" class="lightbox-caption"></p>`;
+    }
   };
 
+  /* Navigation */
   const showPrev = () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     openLightbox(currentIndex);
@@ -388,6 +422,7 @@ function closeWelcomeModal() {
     openLightbox(currentIndex);
   };
 
+  /* Events */
   items.forEach((item, i) => {
     item.addEventListener('click', () => openLightbox(i));
   });
@@ -407,6 +442,7 @@ function closeWelcomeModal() {
     if (e.key === 'Escape')     closeLightbox();
   });
 
+  /* Swipe mobile */
   let touchX = 0;
   lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
   lightbox.addEventListener('touchend', e => {
@@ -447,6 +483,7 @@ function closeWelcomeModal() {
       return;
     }
 
+    // Simulation d'envoi
     const btn = form.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = 'Inscription…'; }
 
@@ -514,6 +551,7 @@ function closeWelcomeModal() {
 
     if (hasError) return;
 
+    // Simulation d'envoi
     if (submit) {
       submit.disabled = true;
       submit.querySelector('span').textContent = 'Envoi en cours…';
@@ -529,6 +567,7 @@ function closeWelcomeModal() {
     }, 1200);
   });
 
+  // Effacer l'erreur au focus
   form.querySelectorAll('input, textarea').forEach(field => {
     field.addEventListener('focus', () => {
       const errId = 'err-' + field.id.replace('c-', '');
@@ -625,6 +664,7 @@ function closeWelcomeModal() {
    14. PRODUCT GALLERY (CATEGORY PAGES)
    ========================================================================== */
 window.changeMainImg = function(btn, newSrc) {
+  // Trouver l'image principale dans le même composant
   const wrap = btn.closest('.product-img-wrap');
   if (!wrap) return;
   
@@ -633,6 +673,7 @@ window.changeMainImg = function(btn, newSrc) {
     mainImg.src = newSrc;
   }
   
+  // Gérer l'état actif des miniatures
   const siblings = wrap.querySelectorAll('.cat-product-thumb');
   siblings.forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
@@ -690,8 +731,57 @@ const PRODUCTS_DATABASE = {
     stars: "★★★★★",
     desc: "Soie de mûrier 100% pure, tombé exceptionnel. Une pièce signature d'exception créée pour faire sensation lors des grands événements.",
     media: [
-      { type: "image", src: "ROBE DE SOIREE EN SOIE.jpg", label: "Photo Officielle 1" },
-      { type: "image", src: "femme.jpg", label: "Photo Officielle 2" }
+      { type: "image", src: "ROBE DE SOIREE EN SOIE.jpg", label: "Robe de Soirée en Soie" }
+    ]
+  },
+  "chelsea-boots-cuir": {
+    id: "chelsea-boots-cuir",
+    title: "Chelsea Boots en Cuir Box Calf",
+    category: "Chaussures en cuir",
+    price: "145 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Cuir box calf premium, élastiques latéraux renforcés, semelle cuir & caoutchouc antidérapante. L'élégance urbaine par excellence.",
+    media: [
+      { type: "image", src: "chelsea_boots_black.png", label: "Vue principale" }
+    ]
+  },
+  "monk-strap-cognac": {
+    id: "monk-strap-cognac",
+    title: "Double Monk Strap Cognac Patiné",
+    category: "Chaussures en cuir",
+    price: "140 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Cuir pleine fleur teinté cognac, double boucle dorée, finitions faites main. Une allure distinguée et affirmée.",
+    media: [
+      { type: "image", src: "monk_strap_shoes.png", label: "Vue principale" }
+    ]
+  },
+  "mocassins-croco-noir": {
+    id: "mocassins-croco-noir",
+    title: "Mocassins Cuir Effet Crocodile",
+    category: "Chaussures en cuir",
+    price: "85 000 FCFA",
+    oldPrice: "110 000 FCFA",
+    stars: "★★★★★",
+    desc: "Cuir véritable effet crocodile embossé, boucle métallique argentée. Raffinement et confort au quotidien.",
+    media: [
+      { type: "image", src: "WhatsApp Image 2026-07-26 at 03.11.13 (1).jpeg", label: "Photo 1" },
+      { type: "image", src: "WhatsApp Image 2026-07-26 at 03.11.13.jpeg", label: "Photo 2" }
+    ]
+  },
+  "mocassin-boucle-noir": {
+    id: "mocassin-boucle-noir",
+    title: "Mocassins à Boucle Cuir Noir",
+    category: "Chaussures en cuir",
+    price: "75 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Cuir lisse véritable, boucle métallique argentée, détail crocodile sur l'empeigne. Élégance intemporelle.",
+    media: [
+      { type: "image", src: "WhatsApp Image 2026-07-26 at 03.11.16.jpeg", label: "Photo 1" },
+      { type: "image", src: "WhatsApp Image 2026-07-26 at 03.11.16 (1).jpeg", label: "Photo 2" }
     ]
   },
   "costume-noir": {
