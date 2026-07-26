@@ -58,7 +58,8 @@
   </nav>
 
   <!-- HERO -->
-  <section class="cat-page-hero" style="background: linear-gradient(135deg, #181510 0%, #0d0c0a 100%);">
+  <section class="cat-page-hero">
+    <div class="cat-page-hero-bg" style="background-image:url('ceinture.jpg')"></div>
     <div class="cat-page-hero-overlay"></div>
     <div class="cat-page-hero-content">
       <div class="container">
@@ -75,7 +76,7 @@
       <nav class="cat-breadcrumb"><div class="cat-breadcrumb-inner"><a href="index.html">Accueil</a> › <span>Ceintures</span></div></nav>
 
       <div class="cat-toolbar">
-        <p class="cat-count"><strong>4</strong> modèles</p>
+        <p class="cat-count"><strong>1</strong> article</p>
         <div class="cat-sort">
           <label for="sort-ceintures">Trier par :</label>
           <select id="sort-ceintures" onchange="sortProducts(this.value)">
@@ -88,57 +89,29 @@
 
       <div class="cat-products-grid" id="products-grid">
 
-        <div class="product-card reveal" data-price="45000" data-date="2026-07">
-          <div class="product-info" style="padding-top: 1.5rem;">
-            <div class="product-badge" style="position:static;display:inline-block;margin-bottom:.8rem">Best Seller</div>
-            <div class="product-cat">Ceinture classique</div>
-            <h3 class="product-name">Ceinture cuir artisanale</h3>
-            <div class="product-stars">★★★★★</div>
-            <p class="product-desc">Cuir vachette pleine fleur, boucle laiton massif. Finition artisanale.</p>
-            <div class="product-footer">
-              <span class="product-price">45 000 FCFA</span>
-              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20artisanale." target="_blank" rel="noopener" class="btn-product-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>WhatsApp</a>
-            </div>
+        <!-- Ceinture 1 -->
+        <div class="product-card reveal" data-price="35000" data-date="2026-07" data-product-id="ceinture-cuir">
+          <div class="product-img-wrap">
+            <img src="ceinture.jpg" alt="Ceintures cuir artisanales" loading="lazy">
+            <div class="product-overlay"><button class="product-quick-btn" onclick="openProductModal('ceinture-cuir')">Découvrir les modèles</button></div>
+            <span class="product-badge" style="background-color:var(--gold);color:var(--dark);">Best Seller</span>
           </div>
-        </div>
-
-        <div class="product-card reveal" data-delay="80" data-price="65000" data-date="2026-07">
-          <div class="product-info" style="padding-top: 1.5rem;">
-            <div class="product-badge" style="position:static;display:inline-block;margin-bottom:.8rem">Exclusif</div>
-            <div class="product-cat">Ceinture prestige</div>
-            <h3 class="product-name">Ceinture cuir croco prestige</h3>
+          <div class="product-info">
+            <div class="product-cat">Accessoires · Artisanal</div>
+            <h3 class="product-name">Ceinture Cuir Véritable Artisanale</h3>
             <div class="product-stars">★★★★★</div>
-            <p class="product-desc">Embossage croco véritable, boucle or brossé, cuir de veau souple.</p>
-            <div class="product-footer">
-              <span class="product-price">65 000 FCFA</span>
-              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20croco." target="_blank" rel="noopener" class="btn-product-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>WhatsApp</a>
+            <div class="product-colors">
+              <span class="color-dot" style="background:#111111" title="Noir"></span>
+              <span class="color-dot" style="background:#4A3018" title="Marron"></span>
+              <span class="color-dot" style="background:#8B4513" title="Cognac"></span>
             </div>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-delay="160" data-price="35000" data-date="2026-06">
-          <div class="product-info" style="padding-top: 1.5rem;">
-            <div class="product-cat">Ceinture réversible</div>
-            <h3 class="product-name">Ceinture réversible noir/marron</h3>
-            <div class="product-stars">★★★★☆</div>
-            <p class="product-desc">Double face noir & marron, boucle amovible chromée. 2 en 1 élégant.</p>
+            <div class="product-sizes">
+              <span class="size-badge">100cm</span><span class="size-badge">110cm</span><span class="size-badge">120cm</span>
+            </div>
+            <p class="product-desc">Cuir véritable pleine fleur, boucle dorée brossée résistant à la corrosion. L'accessoire indispensable.</p>
             <div class="product-footer">
               <span class="product-price">35 000 FCFA</span>
-              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20r%C3%A9versible." target="_blank" rel="noopener" class="btn-product-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>WhatsApp</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card reveal" data-price="55000" data-date="2026-05">
-          <div class="product-info" style="padding-top: 1.5rem;">
-            <div class="product-badge sale" style="position:static;display:inline-block;margin-bottom:.8rem">−15%</div>
-            <div class="product-cat">Ceinture tressée</div>
-            <h3 class="product-name">Ceinture tressée cognac</h3>
-            <div class="product-stars">★★★★★</div>
-            <p class="product-desc">Tressage cuir artisanal, teinte cognac naturelle, boucle dorée.</p>
-            <div class="product-footer">
-              <div><span class="product-price">55 000 FCFA</span><span class="product-old-price">65 000 FCFA</span></div>
-              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20la%20Ceinture%20tress%C3%A9e." target="_blank" rel="noopener" class="btn-product-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>WhatsApp</a>
+              <a href="https://wa.me/22890022197?text=Bonjour%20ChicAhmed%2C%20je%20souhaite%20commander%20une%20Ceinture." target="_blank" rel="noopener" class="btn-product-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>WhatsApp</a>
             </div>
           </div>
         </div>
