@@ -35,7 +35,6 @@
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
-    // Safety fallback — réduit à 1.2s pour un affichage plus rapide
     setTimeout(hidePreloader, 1200);
   }
 })();
@@ -47,25 +46,20 @@ function showWelcomeModal() {
   const modal = document.getElementById('welcome-modal');
   if (!modal) return;
 
-  // N'afficher qu'une fois par session
   if (sessionStorage.getItem('chicahmed_welcomed')) return;
 
-  // Affichage élégant
   modal.style.display = 'flex';
   requestAnimationFrame(() => {
     requestAnimationFrame(() => modal.classList.add('visible'));
   });
 
-  // Bouton "Découvrir la boutique"
   const btn = document.getElementById('welcome-btn');
   btn?.addEventListener('click', closeWelcomeModal);
 
-  // Fermeture sur clic hors de la box
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeWelcomeModal();
   });
 
-  // Fermeture Echap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeWelcomeModal();
   }, { once: true });
@@ -92,7 +86,6 @@ function closeWelcomeModal() {
   const overlay   = document.getElementById('mobile-overlay') || document.querySelector('.mobile-overlay');
   if (!header) return;
 
-  /* ── Scroll ── */
   const handleScroll = () => {
     if (window.scrollY > 50) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
@@ -100,7 +93,6 @@ function closeWelcomeModal() {
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
 
-  /* ── Hamburger ── */
   const closeMobileNav = () => {
     hamburger?.classList.remove('open');
     mobileNav?.classList.remove('active');
@@ -124,16 +116,13 @@ function closeWelcomeModal() {
 
   overlay?.addEventListener('click', closeMobileNav);
 
-  // Bouton de fermeture dans le menu mobile
   const closeBtn = mobileNav?.querySelector('.mobile-nav-close');
   closeBtn?.addEventListener('click', closeMobileNav);
 
-  // Fermer sur clic d'un lien mobile
   mobileNav?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileNav);
   });
 
-  // Fermer sur Echap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileNav?.classList.contains('active')) {
       closeMobileNav();
@@ -145,7 +134,6 @@ function closeWelcomeModal() {
    04. NAVIGATION FLUIDE + LIEN ACTIF
    ========================================================================== */
 (function initSmoothNav() {
-  // Défilement fluide sur tous les liens internes
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -160,7 +148,6 @@ function closeWelcomeModal() {
     });
   });
 
-  // Mettre à jour le lien actif au scroll
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-link');
   const headerH   = () => document.getElementById('header')?.offsetHeight || 80;
@@ -192,7 +179,6 @@ function closeWelcomeModal() {
 (function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length || !('IntersectionObserver' in window)) {
-    // Fallback : tout afficher
     elements.forEach(el => el.classList.add('revealed'));
     return;
   }
@@ -226,7 +212,7 @@ function closeWelcomeModal() {
 
   const animate = (el) => {
     const target   = parseInt(el.dataset.target || 0);
-    const duration = 2000; // ms
+    const duration = 2000;
     let startTime  = null;
 
     const step = (timestamp) => {
@@ -270,16 +256,14 @@ function closeWelcomeModal() {
   let current     = 0;
   let autoTimer   = null;
   let cardsVisible = 1;
-  const GAP       = 24; // 1.5rem
+  const GAP       = 24;
 
-  /* Calcul dynamique du nombre de cartes visibles */
   const getCardsVisible = () => {
     if (window.innerWidth >= 900) return 3;
     if (window.innerWidth >= 600) return 2;
     return 1;
   };
 
-  /* Créer les dots */
   const buildDots = () => {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
@@ -295,7 +279,6 @@ function closeWelcomeModal() {
     }
   };
 
-  /* Mise à jour des styles de carte */
   const updateCardSize = () => {
     cardsVisible = getCardsVisible();
     const trackW = track.parentElement?.offsetWidth || 900;
@@ -307,7 +290,6 @@ function closeWelcomeModal() {
     goTo(Math.min(current, Math.max(0, total - cardsVisible)));
   };
 
-  /* Déplacement */
   const goTo = (index) => {
     const maxIndex = Math.max(0, total - cardsVisible);
     current = Math.max(0, Math.min(index, maxIndex));
@@ -320,7 +302,6 @@ function closeWelcomeModal() {
     });
   };
 
-  /* Autoplay */
   const startAuto = () => {
     stopAuto();
     autoTimer = setInterval(() => {
@@ -330,11 +311,9 @@ function closeWelcomeModal() {
   };
   const stopAuto = () => { if (autoTimer) clearInterval(autoTimer); };
 
-  /* Contrôles */
   prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
   nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
 
-  /* Touch / drag */
   let touchStartX = 0;
   track.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
@@ -348,11 +327,9 @@ function closeWelcomeModal() {
     startAuto();
   }, { passive: true });
 
-  /* Pause on hover */
   track.addEventListener('mouseenter', stopAuto);
   track.addEventListener('mouseleave', startAuto);
 
-  /* Resize */
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -361,7 +338,6 @@ function closeWelcomeModal() {
     }, 200);
   }, { passive: true });
 
-  /* Init */
   updateCardSize();
   startAuto();
 })();
@@ -381,7 +357,6 @@ function closeWelcomeModal() {
 
   let currentIndex = 0;
 
-  /* Ouvrir */
   const openLightbox = (index) => {
     currentIndex = index;
     const item = items[index];
@@ -398,14 +373,12 @@ function closeWelcomeModal() {
     setTimeout(() => { lightboxImg.style.opacity = '1'; lightboxImg.style.transition = 'opacity .35s'; }, 10);
   };
 
-  /* Fermer */
   const closeLightbox = () => {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { lightboxImg.src = ''; }, 400);
   };
 
-  /* Navigation */
   const showPrev = () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     openLightbox(currentIndex);
@@ -415,7 +388,6 @@ function closeWelcomeModal() {
     openLightbox(currentIndex);
   };
 
-  /* Events */
   items.forEach((item, i) => {
     item.addEventListener('click', () => openLightbox(i));
   });
@@ -435,7 +407,6 @@ function closeWelcomeModal() {
     if (e.key === 'Escape')     closeLightbox();
   });
 
-  /* Swipe mobile */
   let touchX = 0;
   lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
   lightbox.addEventListener('touchend', e => {
@@ -476,7 +447,6 @@ function closeWelcomeModal() {
       return;
     }
 
-    // Simulation d'envoi
     const btn = form.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = 'Inscription…'; }
 
@@ -544,7 +514,6 @@ function closeWelcomeModal() {
 
     if (hasError) return;
 
-    // Simulation d'envoi
     if (submit) {
       submit.disabled = true;
       submit.querySelector('span').textContent = 'Envoi en cours…';
@@ -560,7 +529,6 @@ function closeWelcomeModal() {
     }, 1200);
   });
 
-  // Effacer l'erreur au focus
   form.querySelectorAll('input, textarea').forEach(field => {
     field.addEventListener('focus', () => {
       const errId = 'err-' + field.id.replace('c-', '');
@@ -653,3 +621,309 @@ function closeWelcomeModal() {
   }
 })();
 
+/* ==========================================================================
+   14. PRODUCT GALLERY (CATEGORY PAGES)
+   ========================================================================== */
+window.changeMainImg = function(btn, newSrc) {
+  const wrap = btn.closest('.product-img-wrap');
+  if (!wrap) return;
+  
+  const mainImg = wrap.querySelector('img:first-of-type, .main-product-img');
+  if (mainImg) {
+    mainImg.src = newSrc;
+  }
+  
+  const siblings = wrap.querySelectorAll('.cat-product-thumb');
+  siblings.forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+};
+
+/* ==========================================================================
+   15. BASE DE DONNÉES DES PRODUITS & MODAL POP-UP (GALERIE PHOTOS + VIDÉOS)
+   ========================================================================== */
+const PRODUCTS_DATABASE = {
+  "costume-bleu-nuit": {
+    id: "costume-bleu-nuit",
+    title: "Costume Tailleur Sur Mesure (Bleu Nuit)",
+    category: "Costumes",
+    price: "285 000 FCFA",
+    oldPrice: "335 000 FCFA",
+    stars: "★★★★★",
+    desc: "Laine italienne 150s, doublure en soie pur grain, coupe sur-mesure architecturale. L'autorité et le raffinement au quotidien pour rendez-vous d'affaires et réceptions d'exception.",
+    media: [
+      { type: "image", src: "BLEU NUIT.jpeg", label: "Vue principale" }
+    ]
+  },
+  "derby-croco": {
+    id: "derby-croco",
+    title: "Derby Oxford en Cuir Patiné Croco",
+    category: "Chaussures en cuir",
+    price: "125 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★☆",
+    desc: "Cuir veau pleine fleur patiné à la main effet crocodile, semelle Goodyear ultra-résistante. Livré avec embauchoirs et crème de soin.",
+    media: [
+      { type: "image", src: "cuire croco.jpeg", label: "Photo 1" },
+      { type: "image", src: "cuire croco 2.jpeg", label: "Photo 2" },
+      { type: "video", src: "CROCO.mp4", label: "Vidéo Démonstration HD 🎬" }
+    ]
+  },
+  "trench-coat": {
+    id: "trench-coat",
+    title: "Trench-coat Signature",
+    category: "Vestes femme",
+    price: "155 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Manteau trench-coat croisé d'exception avec ceinture amovible, col tailleur ajusté. La sophistication au naturel pour femme distinguée.",
+    media: [
+      { type: "image", src: "Trench-coat.jpg", label: "Photo Officielle 1" },
+      { type: "image", src: "VESTE FEMME.jpg", label: "Photo Officielle 2" }
+    ]
+  },
+  "robe-soie": {
+    id: "robe-soie",
+    title: "Robe de Soirée en Soie",
+    category: "Femmes",
+    price: "220 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Soie de mûrier 100% pure, tombé exceptionnel. Une pièce signature d'exception créée pour faire sensation lors des grands événements.",
+    media: [
+      { type: "image", src: "ROBE DE SOIREE EN SOIE.jpg", label: "Photo Officielle 1" },
+      { type: "image", src: "femme.jpg", label: "Photo Officielle 2" }
+    ]
+  },
+  "costume-noir": {
+    id: "costume-noir",
+    title: "Costume Luxe Noir Présidentiel",
+    category: "Costumes",
+    price: "295 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Costume 3 pièces noir profond, laine peignée italienne Super 160s, doublure en soie. Élégance intemporelle pour dirigeants et réceptions VIP.",
+    media: [
+      { type: "image", src: "NOIRE.jpeg", label: "Photo 1" },
+      { type: "image", src: "P NOIR.jpeg", label: "Photo 2" },
+      { type: "video", src: "NOIRE.mp4", label: "Vidéo Présentation 🎬" },
+      { type: "video", src: "NOIRE 5.mp4", label: "Vidéo Détails 🎬" }
+    ]
+  },
+  "costume-violet": {
+    id: "costume-violet",
+    title: "Costume Princier Violet Impérial",
+    category: "Costumes",
+    price: "310 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Teinte violet magenta impérial d'une rareté captivante, veste ajustée et finitions faites main. Présenté sous tous les angles avec 4 vidéos HD d'essayages.",
+    media: [
+      { type: "image", src: "VIOLET.jpeg", label: "Photo 1" },
+      { type: "image", src: "VIOLET 2.jpeg", label: "Photo 2" },
+      { type: "image", src: "VIOLET 3.jpeg", label: "Photo 3" },
+      { type: "video", src: "VIOLET.mp4", label: "Vidéo Essayage 1 🎬" },
+      { type: "video", src: "VIOLET (2).mp4", label: "Vidéo Essayage 2 🎬" },
+      { type: "video", src: "VIOLET (3).mp4", label: "Vidéo Zoom 3 🎬" },
+      { type: "video", src: "VIOLET 9.mp4", label: "Vidéo Vue globale 🎬" }
+    ]
+  },
+  "costume-gris": {
+    id: "costume-gris",
+    title: "Costume Exécutif Gris Anthracite",
+    category: "Costumes",
+    price: "290 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Nuances de gris italien raffinées, laine peignée haute performance anti-plis. Livré avec galerie de 7 photos et vidéo d'essayage.",
+    media: [
+      { type: "image", src: "GRIS.jpeg", label: "Photo 1" },
+      { type: "image", src: "GRIS 3.jpeg", label: "Photo 2" },
+      { type: "image", src: "GRIS 5.jpeg", label: "Photo 3" },
+      { type: "image", src: "GRIS6.jpeg", label: "Photo 4" },
+      { type: "image", src: "GRIS7.jpeg", label: "Photo 5" },
+      { type: "image", src: "GRIS 8.jpeg", label: "Photo 6" },
+      { type: "image", src: "GRIS 10.jpeg", label: "Photo 7" },
+      { type: "video", src: "GRIS.mp4", label: "Vidéo Essayage 🎬" }
+    ]
+  },
+  "costume-beige": {
+    id: "costume-beige",
+    title: "Costume Royal Beige Sahara",
+    category: "Costumes",
+    price: "300 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Beige lumineux et chaleureux, mélange laine et lin d'été. Idéal pour mariages et cérémonies VIP. Livré avec 8 vidéos HD complètes.",
+    media: [
+      { type: "image", src: "BEIGE 1.jpeg", label: "Photo 1" },
+      { type: "video", src: "BEIGE.mp4", label: "Vidéo 1 🎬" },
+      { type: "video", src: "BEEIGE3.mp4", label: "Vidéo 2 🎬" },
+      { type: "video", src: "BEIGE 4.mp4", label: "Vidéo 3 🎬" },
+      { type: "video", src: "BEIGE 6.mp4", label: "Vidéo 4 🎬" },
+      { type: "video", src: "BEIGE 8.mp4", label: "Vidéo 5 🎬" },
+      { type: "video", src: "BEIGE 10.mp4", label: "Vidéo 6 🎬" },
+      { type: "video", src: "BEIGE 11.mp4", label: "Vidéo 7 🎬" },
+      { type: "video", src: "BEIGE FONCE.mp4", label: "Vidéo 8 (Beige Foncé) 🎬" }
+    ]
+  },
+  "costume-bleu-ciel": {
+    id: "costume-bleu-ciel",
+    title: "Costume Sur-Mesure Bleu Ciel",
+    category: "Costumes",
+    price: "280 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Teinte bleu ciel rafraîchissante, coupe italienne cintrée. L'élégance décontractée des beaux jours.",
+    media: [
+      { type: "image", src: "BLEU CIEL.jpeg", label: "Photo 1" },
+      { type: "image", src: "BELU CIEL 2.jpeg", label: "Photo 2" },
+      { type: "image", src: "BLEU CIEL 3.jpeg", label: "Photo 3" }
+    ]
+  },
+  "mocassins-cuir-noir": {
+    id: "mocassins-cuir-noir",
+    title: "Mocassins Cuir Noir à Boucle Prestige",
+    category: "Chaussures en cuir",
+    price: "135 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Cuir véritable noir patiné, boucle métallique dorée, semelle cousue main. Le comble du raffinement.",
+    media: [
+      { type: "image", src: "CUIRE NOIR.jpeg", label: "Photo 1" },
+      { type: "image", src: "CUIRE NOIRE.jpeg", label: "Photo 2" },
+      { type: "video", src: "CUIRE NOIRE.mp4", label: "Vidéo Présentation 🎬" }
+    ]
+  },
+  "ceinture-cuir": {
+    id: "ceinture-cuir",
+    title: "Ceinture Cuir Véritable Artisanale",
+    category: "Ceintures",
+    price: "35 000 FCFA",
+    oldPrice: "",
+    stars: "★★★★★",
+    desc: "Cuir véritable pleine fleur, boucle dorée brossée résistant à la corrosion. L'accessoire indispensable.",
+    media: [
+      { type: "image", src: "ceinture.jpg", label: "Photo 1" },
+      { type: "image", src: "WhatsApp Image 2026-07-26 at 03.16.28.jpeg", label: "Boutique Ceintures" }
+    ]
+  }
+};
+
+window.openProductModal = function(productId) {
+  const prod = PRODUCTS_DATABASE[productId];
+  if (!prod) return;
+
+  let modal = document.getElementById('product-detail-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'product-detail-modal';
+    modal.className = 'product-modal-backdrop';
+    document.body.appendChild(modal);
+  }
+
+  const imgCount = prod.media.filter(m => m.type === 'image').length;
+  const vidCount = prod.media.filter(m => m.type === 'video').length;
+
+  let mediaBadgeText = [];
+  if (imgCount > 0) mediaBadgeText.push(`📸 ${imgCount} Photo${imgCount > 1 ? 's' : ''}`);
+  if (vidCount > 0) mediaBadgeText.push(`🎬 ${vidCount} Vidéo${vidCount > 1 ? 's' : ''} HD`);
+
+  const waText = encodeURIComponent(`Bonjour ChicAhmed, je souhaite commander le modèle ${prod.title} (${prod.price}).`);
+  const waUrl = `https://wa.me/22890022197?text=${waText}`;
+
+  modal.innerHTML = `
+    <div class="product-modal-container">
+      <button class="product-modal-close" onclick="closeProductModal()" aria-label="Fermer">&times;</button>
+      
+      <div class="product-modal-media">
+        <div class="product-modal-main-view" id="modal-main-view">
+          <!-- Chargé dynamiquement -->
+        </div>
+        ${prod.media.length > 1 ? `<span class="product-modal-thumbs-label">Galerie Media (${prod.media.length})</span>` : ''}
+        <div class="product-modal-thumbs" id="modal-thumbs">
+          <!-- Vignettes -->
+        </div>
+      </div>
+
+      <div class="product-modal-info">
+        <div>
+          <span class="product-modal-cat">${prod.category}</span>
+          <h2 class="product-modal-title">${prod.title}</h2>
+          <div class="product-modal-price">
+            <span>${prod.price}</span>
+            ${prod.oldPrice ? `<span class="product-modal-old-price">${prod.oldPrice}</span>` : ''}
+          </div>
+          <div class="product-modal-badge-count">${mediaBadgeText.join(' · ')}</div>
+          <p class="product-modal-desc" style="margin-top:1.2rem;">${prod.desc}</p>
+        </div>
+
+        <div class="product-modal-actions">
+          <a href="${waUrl}" target="_blank" rel="noopener" class="product-modal-btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Commander via WhatsApp
+          </a>
+          <a href="https://vm.tiktok.com/ZN8J6RQVL/" target="_blank" rel="noopener" class="product-modal-btn-tiktok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#ff0050;"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 1.83 6.338 6.338 0 0 0 8.857 9.006 6.325 6.325 0 0 0 5.215-6.191V9.566a8.211 8.211 0 0 0 4.954 1.63V7.75a4.794 4.794 0 0 1-4.399-1.064z"/></svg>
+            Voir la boutique sur TikTok 🎬
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const mainView = modal.querySelector('#modal-main-view');
+  const thumbsWrap = modal.querySelector('#modal-thumbs');
+
+  const setMainMedia = (item, thumbEl) => {
+    if (item.type === 'video') {
+      mainView.innerHTML = `<video src="${item.src}" controls autoplay loop style="width:100%;height:100%;object-fit:cover;"></video>`;
+    } else {
+      mainView.innerHTML = `<img src="${item.src}" alt="${prod.title}">`;
+    }
+    thumbsWrap.querySelectorAll('.product-modal-thumb').forEach(t => t.classList.remove('active'));
+    if (thumbEl) thumbEl.classList.add('active');
+  };
+
+  if (prod.media && prod.media.length > 0) {
+    prod.media.forEach((m, idx) => {
+      const t = document.createElement('div');
+      t.className = 'product-modal-thumb' + (idx === 0 ? ' active' : '');
+      if (m.type === 'video') {
+        t.innerHTML = `<video src="${m.src}#t=0.5" muted style="width:100%;height:100%;object-fit:cover;"></video><span class="product-modal-thumb-badge">🎬</span>`;
+      } else {
+        t.innerHTML = `<img src="${m.src}" alt="${m.label}">`;
+      }
+      t.addEventListener('click', () => setMainMedia(m, t));
+      thumbsWrap.appendChild(t);
+    });
+
+    setMainMedia(prod.media[0], thumbsWrap.children[0]);
+  }
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  modal.onclick = (e) => {
+    if (e.target === modal) closeProductModal();
+  };
+};
+
+window.closeProductModal = function() {
+  const modal = document.getElementById('product-detail-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    const mainView = modal.querySelector('#modal-main-view');
+    if (mainView) mainView.innerHTML = '';
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-card[data-product-id]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a') && e.target.closest('a').classList.contains('btn-product-wa')) return;
+      const pid = card.dataset.productId;
+      if (pid) openProductModal(pid);
+    });
+  });
+});
